@@ -8,7 +8,7 @@ export default function Footer() {
 
         <div className="col-span-2 sm:col-span-2 md:col-span-1">
           <div className="flex items-center mb-3">
-            <img src={logo} alt="StarLabs" className="w-[120px] min-[1020px]:w-[200px]" />
+            <img src={logo} alt="StarLabs" style={{ width: "220px", height: "auto" }} />
           </div>
           <p className="text-gray-400 text-sm mt-3 leading-6 max-w-xs">
             Research Student exploring the cosmos through computation and observation.
