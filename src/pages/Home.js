@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useCardAnimation from "../hooks/useCardAnimation";
 import { FiCpu, FiGlobe, FiTarget, FiArrowRight } from "react-icons/fi";
 import d from "../data/homeData.json";
 
@@ -113,6 +114,7 @@ function AboutSnippet() {
 /* ================= BLOG PREVIEW ================= */
 function BlogPreview() {
   const navigate = useNavigate();
+  const ref = useCardAnimation();
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-18 lg:py-20">
       {/* section header — left label, right link */}
@@ -126,9 +128,9 @@ function BlogPreview() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {d.posts.map((post, i) => (
-          <div key={i} className="bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+          <div key={i} className="card-animate bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
             <div className="overflow-hidden">
               <img src={post.image} alt={post.title} className="h-44 sm:h-48 lg:h-52 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
@@ -149,11 +151,12 @@ function BlogPreview() {
 /* ================= PROMO CARDS ================= */
 function PromoCards() {
   const navigate = useNavigate();
+  const ref = useCardAnimation();
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-18 lg:pb-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
         {d.cards.map((card, i) => (
-          <div key={i} className={`rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
+          <div key={i} className={`card-animate rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
             <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
             <p className="text-gray-300 mt-4 text-sm sm:text-base flex-1">{card.desc}</p>
             <div className="mt-8">

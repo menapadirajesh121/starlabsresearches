@@ -4,6 +4,7 @@ import {
   FiFilter, FiGithub, FiFileText, FiChevronDown, FiChevronUp,
 } from "react-icons/fi";
 import d from "../data/researchData.json";
+import useCardAnimation from "../hooks/useCardAnimation";
 
 /* ================= HERO ================= */
 function Hero({ pubRef }) {
@@ -109,6 +110,7 @@ function Projects() {
   const [activeTopic, setActiveTopic] = useState("All Projects");
   const [search, setSearch] = useState("");
   const [filterOpen, setFilterOpen] = useState(false);
+  const gridRef = useCardAnimation();
 
   const filtered = d.projects.filter((p) => {
     const matchTopic = activeTopic === "All Projects" || p.tags.includes(activeTopic);
@@ -159,9 +161,9 @@ function Projects() {
               <button onClick={() => { setSearch(""); setActiveTopic("All Projects"); }} className="mt-4 text-purple-300 text-sm">Clear filters</button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {filtered.map((project, i) => (
-                <div key={i} className="bg-[#17131f] rounded-2xl border border-white/5 overflow-hidden group">
+                <div key={i} className="card-animate bg-[#17131f] rounded-2xl border border-white/5 overflow-hidden group">
                   <div className="overflow-hidden">
                     <img src={project.image} alt="" className="h-44 sm:h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
@@ -250,7 +252,7 @@ function Publications({ pubRef }) {
 
         <div className="space-y-4 sm:space-y-5">
           {d.publications.map((pub, i) => (
-            <div key={i} className="bg-[#17131f] border border-white/5 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start justify-between gap-5">
+            <div key={i} className="card-animate bg-[#17131f] border border-white/5 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start justify-between gap-5">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs">{pub.type}</span>

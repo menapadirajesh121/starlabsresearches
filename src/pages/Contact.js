@@ -4,6 +4,7 @@ import {
   FiBook, FiGithub, FiLinkedin, FiClock, FiAward,
 } from "react-icons/fi";
 import d from "../data/contactData.json";
+import useCardAnimation from "../hooks/useCardAnimation";
 
 const iconMap = { FiBook, FiAward, FiGithub, FiLinkedin, FiClock, FiMail };
 
@@ -151,12 +152,13 @@ function ContactForm() {
 
 /* ================= INFO CARDS ================= */
 function InfoCards() {
+  const ref = useCardAnimation();
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
       {d.infoCards.map((card, i) => {
         const Icon = iconMap[card.icon] || FiAward;
         return (
-          <div key={i} className="bg-[#17131f] border border-white/5 rounded-xl p-5">
+          <div key={i} className="card-animate bg-[#17131f] border border-white/5 rounded-xl p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <Icon className="text-purple-300" size={17} />

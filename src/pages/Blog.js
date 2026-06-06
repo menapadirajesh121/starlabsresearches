@@ -4,6 +4,7 @@ import {
   FiChevronLeft, FiMail, FiArrowRight, FiFilter, FiX,
 } from "react-icons/fi";
 import d from "../data/blogData.json";
+import useCardAnimation from "../hooks/useCardAnimation";
 
 const POSTS_PER_PAGE = 4;
 
@@ -218,7 +219,7 @@ function PostCard({ post }) {
 
   return (
     <article
-      className="flex flex-col sm:flex-row bg-[#17131f] border border-white/5 rounded-2xl overflow-hidden group"
+      className="card-animate flex flex-col sm:flex-row bg-[#17131f] border border-white/5 rounded-2xl overflow-hidden group"
       aria-label={post.title}
     >
       {/* image */}
@@ -281,6 +282,7 @@ function PostList({ allFiltered, page, setPage, activeCategory, onClearFilters }
   const safePage    = Math.min(page, totalPages);
   const start       = (safePage - 1) * POSTS_PER_PAGE;
   const paginated   = allFiltered.slice(start, start + POSTS_PER_PAGE);
+  const listRef     = useCardAnimation();
 
   // visible page numbers (max 4 shown)
   const pageNums = useMemo(() => {
@@ -319,7 +321,7 @@ function PostList({ allFiltered, page, setPage, activeCategory, onClearFilters }
         </div>
       ) : (
         <>
-          <div className="space-y-5">
+          <div ref={listRef} className="space-y-5">
             {paginated.map((post) => <PostCard key={post.id} post={post} />)}
           </div>
 

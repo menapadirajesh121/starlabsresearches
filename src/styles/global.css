@@ -161,3 +161,16 @@ body {
 .focus-item:last-child {
   border-bottom: none;
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-animate {
+  opacity: 0;
+}
+
+.card-animate.in-view {
+  animation: fadeUp 0.55s ease forwards;
+}

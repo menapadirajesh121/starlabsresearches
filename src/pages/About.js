@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FiArrowRight, FiDownload, FiAward } from "react-icons/fi";
 import { FaAtom } from "react-icons/fa";
 import d from "../data/aboutData.json";
+import useCardAnimation from "../hooks/useCardAnimation";
 
 /* ================= HERO ================= */
 function Hero() {
@@ -49,8 +50,9 @@ function Hero() {
 /* ================= MAIN CONTENT ================= */
 function MainContent() {
   const navigate = useNavigate();
+  const ref = useCardAnimation();
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
 
         {/* LEFT — 2 cols wide: journey + timeline + goals */}
@@ -62,7 +64,7 @@ function MainContent() {
               <FaAtom className="text-purple-300 shrink-0" />
               My Academic Journey
             </h2>
-            <div className="bg-[#17131f] p-6 sm:p-8 rounded-2xl border border-white/5 space-y-4">
+            <div className="card-animate bg-[#17131f] p-6 sm:p-8 rounded-2xl border border-white/5 space-y-4">
               {d.journey.intro.map((p, i) => (
                 <p key={i} className="text-gray-300 leading-7 text-sm sm:text-base">{p}</p>
               ))}
@@ -89,7 +91,7 @@ function MainContent() {
           </div>
 
           {/* Goals card */}
-          <div className="bg-[#1a1524] rounded-2xl p-6 sm:p-8 border border-white/5">
+          <div className="card-animate bg-[#1a1524] rounded-2xl p-6 sm:p-8 border border-white/5">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-purple-400 text-black p-3 rounded-xl shrink-0">
                 <FiAward size={18} />
@@ -111,7 +113,7 @@ function MainContent() {
         <div className="space-y-6">
 
           {/* Research snapshot */}
-          <div className="bg-[#17131f] rounded-2xl p-6 sm:p-7 border border-white/5">
+          <div className="card-animate bg-[#17131f] rounded-2xl p-6 sm:p-7 border border-white/5">
             <h3 className="font-bold text-lg mb-6">Research Snapshot</h3>
             <TagGroup title="INTERESTS" items={d.snapshot.interests} />
             <TagGroup title="TECHNICAL SKILLS" items={d.snapshot.skills} />
@@ -136,7 +138,7 @@ function MainContent() {
           </div>
 
           {/* Open for Collaboration */}
-          <div className="bg-gradient-to-br from-[#241822] to-[#1e1520] border border-orange-500/20 rounded-2xl p-6 sm:p-7">
+          <div className="card-animate bg-gradient-to-br from-[#241822] to-[#1e1520] border border-orange-500/20 rounded-2xl p-6 sm:p-7">
             <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
               <span className="text-orange-400 text-lg">🤝</span>
             </div>
