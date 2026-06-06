@@ -158,7 +158,7 @@ function InfoCards() {
       {d.infoCards.map((card, i) => {
         const Icon = iconMap[card.icon] || FiAward;
         return (
-          <div key={i} className="card-animate bg-[#17131f] border border-white/5 rounded-xl p-5">
+          <div key={i} className="card-animate card-interactive bg-[#17131f] border border-white/5 rounded-xl p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <Icon className="text-purple-300" size={17} />

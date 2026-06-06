@@ -162,15 +162,70 @@ body {
   border-bottom: none;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* ── Card animation system ───────────────────────────── */
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Viewport entrance */
 .card-animate {
   opacity: 0;
+  transform: translateY(32px);
+  will-change: transform, opacity;
 }
 
 .card-animate.in-view {
-  animation: fadeUp 0.55s ease forwards;
+  animation: cardFadeUp 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hover lift — apply alongside card-animate or standalone */
+.card-interactive {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-interactive:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    0 4px 12px rgba(157, 107, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Combined: animate in + hover lift */
+.card-animate.card-interactive {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .card-animate {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+    will-change: auto;
+  }
+  .card-interactive,
+  .card-animate.card-interactive {
+    transition: border-color 0.2s ease;
+    will-change: auto;
+  }
+  .card-interactive:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

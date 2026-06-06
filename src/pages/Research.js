@@ -47,8 +47,9 @@ function Hero({ pubRef }) {
 /* ================= FEATURED ================= */
 function Featured() {
   const f = d.featured;
+  const ref = useCardAnimation();
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+    <section ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
       {/* section label */}
       <div className="mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold">{f.heading}</h2>
@@ -56,7 +57,7 @@ function Featured() {
         <div className="w-10 h-0.5 bg-purple-400 mt-4" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#17131f] border border-white/5 rounded-2xl lg:rounded-3xl overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#17131f] border border-white/5 rounded-2xl lg:rounded-3xl overflow-hidden card-animate card-interactive">
         {/* content — left on desktop, bottom on mobile */}
         <div className="p-6 sm:p-8 lg:p-10 order-2 lg:order-1">
           <div className="flex gap-2 flex-wrap mb-6">
@@ -163,7 +164,7 @@ function Projects() {
           ) : (
             <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {filtered.map((project, i) => (
-                <div key={i} className="card-animate bg-[#17131f] rounded-2xl border border-white/5 overflow-hidden group">
+                <div key={i} className="card-animate card-interactive bg-[#17131f] rounded-2xl border border-white/5 overflow-hidden group">
                   <div className="overflow-hidden">
                     <img src={project.image} alt="" className="h-44 sm:h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
@@ -241,6 +242,7 @@ function SidebarContent({ search, setSearch, activeTopic, setActiveTopic }) {
 
 /* ================= PUBLICATIONS ================= */
 function Publications({ pubRef }) {
+  const animRef = useCardAnimation();
   return (
     <section ref={pubRef} className="border-t border-white/5 py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,9 +252,9 @@ function Publications({ pubRef }) {
           <p className="text-gray-400 mt-2 text-sm sm:text-base">Published works in high-impact journals.</p>
         </div>
 
-        <div className="space-y-4 sm:space-y-5">
+        <div ref={animRef} className="space-y-4 sm:space-y-5">
           {d.publications.map((pub, i) => (
-            <div key={i} className="card-animate bg-[#17131f] border border-white/5 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start justify-between gap-5">
+            <div key={i} className="card-animate card-interactive bg-[#17131f] border border-white/5 rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start justify-between gap-5">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs">{pub.type}</span>

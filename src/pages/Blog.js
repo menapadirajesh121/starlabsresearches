@@ -219,7 +219,7 @@ function PostCard({ post }) {
 
   return (
     <article
-      className="card-animate flex flex-col sm:flex-row bg-[#17131f] border border-white/5 rounded-2xl overflow-hidden group"
+      className="card-animate card-interactive flex flex-col sm:flex-row bg-[#17131f] border border-white/5 rounded-2xl overflow-hidden group"
       aria-label={post.title}
     >
       {/* image */}

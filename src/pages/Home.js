@@ -80,7 +80,7 @@ function AboutSnippet() {
           </div>
 
           {/* RIGHT — Current Focus card */}
-          <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5">
+          <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5 card-animate card-interactive">
             <div className="p-6 sm:p-8">
               <div className="w-12 h-12 rounded-xl bg-[#2d2140] flex items-center justify-center">
                 <FiTarget size={20} className="text-[#b889ff]" />
@@ -130,7 +130,7 @@ function BlogPreview() {
 
       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {d.posts.map((post, i) => (
-          <div key={i} className="card-animate bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+          <div key={i} className="card-animate card-interactive bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
             <div className="overflow-hidden">
               <img src={post.image} alt={post.title} className="h-44 sm:h-48 lg:h-52 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
@@ -156,7 +156,7 @@ function PromoCards() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-18 lg:pb-20">
       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
         {d.cards.map((card, i) => (
-          <div key={i} className={`card-animate rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
+          <div key={i} className={`card-animate card-interactive rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
             <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
             <p className="text-gray-300 mt-4 text-sm sm:text-base flex-1">{card.desc}</p>
             <div className="mt-8">
