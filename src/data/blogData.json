@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "badge": "The Cosmic Chronicle",
+    "title": "Insights from the",
+    "highlight": "Event Horizon",
+    "paragraph": "A repository of thoughts, technical deep-dives, and narrative reflections on the journey of an astrophysics PhD student."
+  },
+  "categories": [
+    { "name": "All Topics", "count": 18 },
+    { "name": "Research Logs", "count": 6 },
+    { "name": "Academic Life", "count": 4 },
+    { "name": "Tutorials", "count": 5 },
+    { "name": "SpaceNews", "count": 3 }
+  ],
+  "popularTags": ["#Cosmology", "#Python", "#DataSci", "#GradLife", "#Simulation", "#SpaceX", "#BlackHoles"],
+  "newsletter": {
+    "title": "Monthly Briefing",
+    "desc": "Get research updates directly in your orbit.",
+    "placeholder": "star-lover@cosmos.com",
+    "btn": "Join Exploration",
+    "successMsg": "🚀 You're in orbit!"
+  },
+  "posts": [
+    { "id": 1, "category": "Research Logs", "date": "October 14, 2023", "readTime": "8 min read", "title": "Chasing Shadows: The Quest for Dark Matter Candidates", "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200", "excerpt": "The universe is far more crowded than our eyes let on. Last month, while refining our computational models at the observatory, I realized that the silence between the stars isn't empty—it's heavy with the invisible.", "tags": ["DARKMATTER", "COMPUTATION", "ASTROPHYSICS"] },
+    { "id": 2, "category": "Academic Life", "date": "September 28, 2023", "readTime": "12 min read", "title": "The PhD Paradox: Balancing Simulation and Sanity", "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200", "excerpt": "They don't tell you that half of a PhD is waiting for code to compile and the other half is questioning your own existence. Here's how I'm learning to manage both.", "tags": ["GRADSCHOOL", "PYTHON", "MENTALHEALTH"] },
+    { "id": 3, "category": "Tutorials", "date": "August 12, 2023", "readTime": "6 min read", "title": "First Light: My Journey into Radio Astronomy", "image": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1200", "excerpt": "Radio waves are the hidden whispers of the cosmos. In this post, I break down the fundamentals of signal processing for astronomy students.", "tags": ["RADIOWAVES", "SIGNALPROCESSING", "BEGINNER"] },
+    { "id": 4, "category": "SpaceNews", "date": "July 05, 2023", "readTime": "10 min read", "title": "Stardust and Silicon: Machine Learning in Space", "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200", "excerpt": "AI is transforming astronomy. Discover how neural networks are helping researchers identify patterns hidden inside massive datasets.", "tags": ["AI", "SPACETECH", "GALAXIES"] }
+  ]
+}

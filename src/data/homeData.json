@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "badge": "PhD Candidate in Astrophysics",
+    "title": "Decoding the",
+    "highlight": "Galactic Tapestry",
+    "paragraph": "Exploring the origins of galaxy formation and dark matter through large-scale computational simulations and high-energy observations.",
+    "primaryBtn": "Explore My Research",
+    "secondaryBtn": "My Journey"
+  },
+  "about": {
+    "eyebrow": "About My Work",
+    "title": "A Passion for the Unseen Universe",
+    "paragraphs": [
+      "My research focuses on the intersection of computational astrophysics and observational cosmology. Currently, I am a PhD student at Global Space University, where I investigate how dark matter halos influence the chemical enrichment of early galaxies.",
+      "Using the latest supercomputing clusters, I develop high-resolution simulations to mimic the first billion years of the universe."
+    ],
+    "tags": ["Galaxy Evolution", "Dark Matter", "Python", "CUDA", "Cosmology"],
+    "focusItems": [
+      { "icon": "FiCpu", "color": "bg-[#261938]", "iconColor": "text-[#a56fff]", "title": "Large-scale Simulations", "desc": "Running 10^7 particle simulations on the Aurora Supercomputer." },
+      { "icon": "FiGlobe", "color": "bg-[#4a1f07]", "iconColor": "text-[#ff8a4c]", "title": "Global Collaborations", "desc": "Working with international teams across 4 continents." }
+    ]
+  },
+  "posts": [
+    { "title": "The Physics of Quasars", "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564", "tag": "Deep Space" },
+    { "title": "Simulating the Big Bang", "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca", "tag": "Computational" },
+    { "title": "The JWST Era Begins", "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa", "tag": "Observation" }
+  ],
+  "cards": [
+    { "title": "The Researcher", "desc": "Discover my academic journey, milestones, and experiences.", "btn": "View Full Profile", "bg": "bg-[#3b2157]", "btnClass": "bg-purple-300 text-black", "link": "/about" },
+    { "title": "The Discovery", "desc": "Explore my technical portfolio, simulations, and publications.", "btn": "Explore My Research", "bg": "bg-[#8c3d10]", "btnClass": "bg-white text-black", "link": "/research" }
+  ],
+  "cta": {
+    "title": "Open for Collaboration",
+    "desc": "I am always eager to connect with fellow researchers, prospective supervisors, and space enthusiasts.",
+    "primaryBtn": "Get In Touch",
+    "secondaryBtn": "Download Academic CV"
+  }
+}

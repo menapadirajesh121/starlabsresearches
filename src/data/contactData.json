@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "badge": "Get In Touch",
+    "title": "Let's Explore the",
+    "highlight": "Universe",
+    "suffix": "Together",
+    "paragraph": "Whether you're a prospective PhD supervisor, a collaborator, or a fellow enthusiast, I'd love to hear from you."
+  },
+  "form": {
+    "title": "Collaborate or Supervise",
+    "desc": "I am actively seeking PhD candidacy collaborations and am open to discussing research opportunities in stellar evolution and dark matter modelling.",
+    "cardTitle": "Send a Message",
+    "cardDesc": "Fill out the form below and I'll get back to you within 48 hours.",
+    "inquiryTypes": ["PhD Supervision", "Research Collaboration", "Media/Press", "General Query"],
+    "submitBtn": "Send Message",
+    "successTitle": "Message Sent!",
+    "successDesc": "I'll get back to you within 48 hours.",
+    "resetBtn": "Send Another"
+  },
+  "infoCards": [
+    { "icon": "FiAward", "title": "Open to Supervisors", "desc": "Currently exploring PhD positions starting Fall 2025." },
+    { "icon": "FiClock", "title": "Quick Responses", "desc": "Typical response time for academic inquiries is 1-2 days." }
+  ],
+  "footprint": {
+    "label": "Academic Footprint",
+    "links": [
+      { "icon": "FiBook", "title": "Google Scholar", "subtitle": "Alex Stardust (PhD Cand.)" },
+      { "icon": "FiAward", "title": "ORCID ID", "subtitle": "0000-0001-2345-6789" },
+      { "icon": "FiGithub", "title": "GitHub / Lab Code", "subtitle": "@astro-alex" },
+      { "icon": "FiLinkedin", "title": "LinkedIn", "subtitle": "Alex Stardust" }
+    ]
+  },
+  "station": {
+    "title": "Current Station",
+    "lines": ["Global Space University", "Department of Astrophysics", "Laboratory for Computational Cosmos", "Desk 42-B", "Stardust City, SC 90210"],
+    "emailLabel": "Official Outreach",
+    "email": "a.stardust@space-uni.edu"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "updated": "Updated August 2024",
+    "btn": "Download PDF"
+  },
+  "banner": {
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1800",
+    "eyebrow": "Global Research Network",
+    "title": "Contributing to the Scientific Community"
+  }
+}

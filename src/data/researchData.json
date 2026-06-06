@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "Research Portfolio",
+    "title": "Probing the Fundamental",
+    "highlight": "Secrets",
+    "subtitle": "of the Universe",
+    "paragraph": "Combining high-resolution computational simulations with multi-messenger observations to explore galaxy formation and cosmological evolution.",
+    "primaryBtn": "View Latest Paper",
+    "secondaryBtn": "Browse Publications",
+    "paperUrl": "https://arxiv.org"
+  },
+  "featured": {
+    "heading": "Featured Highlight",
+    "subheading": "The primary focus of my current research efforts.",
+    "badges": ["Featured Working Paper", "Most Recent Result"],
+    "title": "Neural Networks for Cosmic Microwave Background Anisotropy Analysis",
+    "desc": "Implementing deep learning architectures to distinguish between primordial B-modes and foreground noise in BICEP3 data.",
+    "collaborator": { "name": "Dr. Sarah Jenkins", "org": "Global Space Lab" },
+    "stack": ["Python", "PyTorch", "C++"],
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000",
+    "primaryBtn": "Download Preprint",
+    "secondaryBtn": "Dataset Access"
+  },
+  "topics": ["All Projects", "Cosmology", "Stellar Evolution", "Machine Learning", "Dark Matter", "Computational Physics"],
+  "projects": [
+    { "title": "Neural Networks for Cosmic Microwave Background Analysis", "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800", "tags": ["Machine Learning", "Cosmology"], "author": "Dr. Sarah Jenkins" },
+    { "title": "Stellar Nucleosynthesis in Binary White Dwarf Mergers", "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800", "tags": ["Stellar Evolution", "Computational Physics"], "author": "Prof. Michael Zhang" },
+    { "title": "Mapping Dark Matter Halos via Weak Gravitational Lensing", "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800", "tags": ["Dark Matter", "Cosmology"], "author": "LSST Collaboration" },
+    { "title": "Automated Transit Detection in TESS Light Curves", "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800", "tags": ["Machine Learning", "Stellar Evolution"], "author": "NASA Exoplanet Archive" }
+  ],
+  "publications": [
+    { "type": "Journal Article", "doi": "10.3847/2041-8213/acb123", "title": "Deep Learning Approaches to CMB Polarization" },
+    { "type": "Journal Article", "doi": "10.1093/mnras/stac456", "title": "SPH Simulations of Double Degenerate Mergers" },
+    { "type": "Conference Paper", "doi": "10.1017/S174392132100789", "title": "Weak Lensing Mass Maps of the Coma Cluster" }
+  ]
+}

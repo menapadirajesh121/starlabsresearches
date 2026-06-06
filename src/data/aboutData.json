@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "badge": "PhD Candidate • Space Observation",
+    "title": "Hi, I'm Alex. I study the",
+    "highlight": "unseen rhythms",
+    "subtitle": "of our universe.",
+    "paragraph": "Astrophysics research student at Global Space University, dedicated to computational modeling of dark matter and early galaxy formation.",
+    "primaryBtn": "Get In Touch",
+    "secondaryBtn": "Download CV"
+  },
+  "journey": {
+    "intro": [
+      "Ever since looking through a hand-me-down telescope at age nine, the silence of the stars has been my favorite puzzle.",
+      "My research aims to bridge the gap between theoretical predictions and observational datasets."
+    ],
+    "timeline": [
+      { "year": "2021 - Present", "title": "PhD in Astrophysics (Candidate)", "school": "Global Space University", "desc": "Developing Bayesian inference pipelines for dark matter substructures." },
+      { "year": "2019 - 2021", "title": "MSc in Physics & Astronomy", "school": "University of Stellar Heights", "desc": "Graduated with distinction and specialized in cosmology." },
+      { "year": "2020 Summer", "title": "Research Fellow", "school": "International Observatory Center", "desc": "Collaborated with the data science team on supernova detection." },
+      { "year": "2015 - 2019", "title": "BSc in Mathematical Physics", "school": "Institute of Fundamental Science", "desc": "Focused on quantum mechanics and relativity." }
+    ]
+  },
+  "goals": {
+    "title": "PhD Goals & Aspirations",
+    "desc": "My ultimate goal is to contribute to the Cosmological Standard Model by providing empirical evidence for the nature of dark matter.",
+    "btn": "Learn about my active research"
+  },
+  "snapshot": {
+    "interests": ["Dark Matter", "Galaxy Formation", "Bayesian Stats", "Cosmology"],
+    "skills": ["Python", "NumPy", "PyTorch", "C++", "TensorFlow", "SQL", "LaTeX", "GitHub"],
+    "honors": [
+      { "label": "National Space Fellowship", "year": "2023" },
+      { "label": "Best Poster Award", "year": "2022" },
+      { "label": "Provost Excellence", "year": "2021" }
+    ]
+  },
+  "cta": {
+    "title": "Want to see my recent publications?",
+    "desc": "Check out the technical portfolio including active projects.",
+    "btn": "Explore Research"
+  }
+}
