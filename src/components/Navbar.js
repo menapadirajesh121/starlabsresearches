@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* LEFT — Logo */}
         <NavLink to="/" className="flex items-center gap-2.5 shrink-0 mt-4">
-          <img src={logo} alt="StarLabs" className="w-[120px] min-[1020px]:w-[200px]" />
+          <img src={logo} alt="StarLabs" style={{ width: "220px", height: "auto" }} />
         </NavLink>
 
         {/* RIGHT — Nav links + Connect button (desktop) */}
