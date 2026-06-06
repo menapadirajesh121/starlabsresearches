@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Sparkles } from "lucide-react";
+import logo from "../images/starlabs_logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -20,13 +20,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
 
         {/* LEFT — Logo */}
-        <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#b58be8] flex items-center justify-center">
-            <Sparkles size={16} strokeWidth={2.5} className="text-[#1a1224]" />
-          </div>
-          <span className="font-bold text-lg sm:text-xl tracking-tight text-[#b58be8]">
-            AstroJourney
-          </span>
+        <NavLink to="/" className="flex items-center gap-2.5 shrink-0 mt-4">
+          <img src={logo} alt="StarLabs" className="w-[120px] min-[1020px]:w-[200px]" />
         </NavLink>
 
         {/* RIGHT — Nav links + Connect button (desktop) */}

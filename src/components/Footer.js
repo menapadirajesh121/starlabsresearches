@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
+import logo from "../images/starlabs_logo.png";
 
 export default function Footer() {
   return (
@@ -7,11 +7,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
 
         <div className="col-span-2 sm:col-span-2 md:col-span-1">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-full bg-[#b58be8] flex items-center justify-center">
-              <Sparkles size={20} strokeWidth={2.5} className="text-[#1a1224]" />
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#b58be8]">AstroJourney</h3>
+          <div className="flex items-center mb-3">
+            <img src={logo} alt="StarLabs" className="w-[120px] min-[1020px]:w-[200px]" />
           </div>
           <p className="text-gray-400 text-sm mt-3 leading-6 max-w-xs">
             Research Student exploring the cosmos through computation and observation.
@@ -56,7 +53,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-gray-500 text-xs sm:text-sm">© 2024 AstroJourney. All rights reserved.</p>
+        <p className="text-gray-500 text-xs sm:text-sm">© 2024 StarLabs Researches. All rights reserved.</p>
         <p className="text-gray-500 text-xs sm:text-sm">Built with ❤️ for the cosmos</p>
       </div>
     </footer>
