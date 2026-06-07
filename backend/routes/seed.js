@@ -7,7 +7,7 @@ const researchData = require("../data/researchData.json");
 async function runSeed(onlyIfEmpty = false) {
   if (onlyIfEmpty) {
     const [b, r] = await Promise.all([Blog.countDocuments(), Research.countDocuments()]);
-    if (b > 0 || r > 0) return;
+    if (b > 0 || r > 0) { console.log("✅ DB already seeded."); return; }
     console.log("🌱 DB empty — auto-seeding...");
   }
   const blogs = blogData.posts.map((p) => ({
@@ -24,13 +24,13 @@ async function runSeed(onlyIfEmpty = false) {
 
   const research = researchData.projects.map((p, i) => ({
     title:    p.title,
-    desc:     "Implementing advanced techniques for large-scale cosmological analysis.",
+    desc:     researchData.publications[i]?.title || p.title,
     image:    p.image,
     tags:     p.tags,
     author:   p.author,
     doi:      researchData.publications[i]?.doi  || "",
     type:     researchData.publications[i]?.type || "Preprint",
-    stack:    researchData.featured.stack || [],
+    stack:    p.tags,
     featured: i === 0,
   }));
 
@@ -38,7 +38,7 @@ async function runSeed(onlyIfEmpty = false) {
   await Research.deleteMany({});
   await Blog.insertMany(blogs);
   await Research.insertMany(research);
-
+  console.log(`✅ Seeded ${blogs.length} blogs and ${research.length} research items.`);
   return { blogs: blogs.length, research: research.length };
 }
 
