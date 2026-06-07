@@ -34,10 +34,13 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Server error" });
 });
 
+const { runSeed } = require("./routes/seed");
+
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => {
+  .then(async () => {
     console.log("✅ MongoDB Atlas connected!");
+    await runSeed(true);
     app.listen(process.env.PORT, () =>
       console.log(`🚀 Server running on http://localhost:${process.env.PORT}`)
     );

@@ -4,7 +4,12 @@ const Research    = require("../models/Research");
 const blogData    = require("../data/blogData.json");
 const researchData = require("../data/researchData.json");
 
-async function runSeed() {
+async function runSeed(onlyIfEmpty = false) {
+  if (onlyIfEmpty) {
+    const [b, r] = await Promise.all([Blog.countDocuments(), Research.countDocuments()]);
+    if (b > 0 || r > 0) return;
+    console.log("🌱 DB empty — auto-seeding...");
+  }
   const blogs = blogData.posts.map((p) => ({
     slug:     p.slug,
     title:    p.title,
@@ -65,3 +70,4 @@ router.get("/check", async (req, res) => {
 });
 
 module.exports = router;
+module.exports.runSeed = runSeed;
