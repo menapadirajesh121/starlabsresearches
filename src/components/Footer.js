@@ -4,11 +4,11 @@ import logo from "../images/starlabs_logo.png";
 export default function Footer() {
   return (
     <footer className="bg-[#0d0a14] border-t border-white/10 py-12 sm:py-14 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
 
-        <div className="col-span-2 sm:col-span-2 md:col-span-1">
+        <div className="col-span-1 sm:col-span-2 md:col-span-1">
           <div className="flex items-center mb-3">
-            <img src={logo} alt="StarLabs" style={{ width: "220px", height: "auto" }} />
+            <img src={logo} alt="StarLabs" className="w-36 sm:w-44 lg:w-52" style={{ height: "auto" }} />
           </div>
           <p className="text-gray-400 text-sm mt-3 leading-6 max-w-xs">
             Research Student exploring the cosmos through computation and observation.
@@ -18,13 +18,13 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Navigation</h4>
           <div className="space-y-2 sm:space-y-3">
-            {["/", "/about", "/research", "/blog", "/contact"].map((to, i) => (
+            {["/", "/about", "/research", "/blog", "/contact", "/team"].map((to, i) => (
               <Link
                 key={to}
                 to={to}
                 className="block text-gray-400 hover:text-purple-300 transition-colors text-sm"
               >
-                {["Home", "About", "Research", "Blog", "Contact"][i]}
+                {["Home", "About", "Research", "Blog", "Contact", "Team"][i]}
               </Link>
             ))}
           </div>

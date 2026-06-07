@@ -126,8 +126,8 @@ body {
 
 .hero-glow {
   position: absolute;
-  width: 450px;
-  height: 450px;
+  width: clamp(200px, 40vw, 450px);
+  height: clamp(200px, 40vw, 450px);
   border-radius: 50%;
   background: rgba(157,107,255,.18);
   filter: blur(120px);

@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCardAnimation from "../hooks/useCardAnimation";
-import { FiCpu, FiGlobe, FiTarget, FiArrowRight } from "react-icons/fi";
+import { FiCpu, FiGlobe, FiArrowRight } from "react-icons/fi";
+import { PiBinoculars } from "react-icons/pi";
 import d from "../data/homeData.json";
 
 const iconMap = { FiCpu, FiGlobe };
@@ -11,18 +12,26 @@ function Hero() {
   const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-8 sm:pt-0">
+      {/* background image */}
+      <img
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&auto=format&fit=crop&q=80"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-[#020510]/75 pointer-events-none" />
       {/* background glow */}
-      <div className="absolute w-[300px] sm:w-[480px] h-[300px] sm:h-[480px] rounded-full bg-purple-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[420px] lg:w-[480px] h-[280px] sm:h-[420px] lg:h-[480px] rounded-full bg-cyan-500/15 blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl w-full mx-auto py-20 sm:py-28 lg:py-32">
-        <span className="px-4 py-1.5 border border-white/10 rounded-full text-xs sm:text-sm">
+        <span className="px-4 py-1.5 border border-cyan-400/30 bg-cyan-500/10 rounded-full text-xs sm:text-sm text-cyan-200">
           {d.hero.badge}
         </span>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-6 leading-tight">
           {d.hero.title}
           <br />
-          <span className="bg-gradient-to-r from-white to-orange-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-200 to-sky-400 bg-clip-text text-transparent">
             {d.hero.highlight}
           </span>
         </h1>
@@ -34,13 +43,13 @@ function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8">
           <button
             onClick={() => navigate("/research")}
-            className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-500 to-purple-400 font-medium text-sm sm:text-base"
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-sky-400 text-black font-medium text-sm sm:text-base"
           >
             {d.hero.primaryBtn}
           </button>
           <button
             onClick={() => navigate("/about")}
-            className="px-7 py-3 rounded-full border border-white/10 bg-white/5 font-medium text-sm sm:text-base"
+            className="px-7 py-3 rounded-full border border-cyan-400/20 bg-cyan-500/5 font-medium text-sm sm:text-base text-cyan-100"
           >
             {d.hero.secondaryBtn}
           </button>
@@ -80,10 +89,10 @@ function AboutSnippet() {
           </div>
 
           {/* RIGHT — Current Focus card */}
-          <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5 card-animate card-interactive">
+          <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5">
             <div className="p-6 sm:p-8">
               <div className="w-12 h-12 rounded-xl bg-[#2d2140] flex items-center justify-center">
-                <FiTarget size={20} className="text-[#b889ff]" />
+                <PiBinoculars size={22} className="text-[#b889ff]" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold mt-6 text-white">Current Focus</h3>
             </div>
@@ -137,7 +146,7 @@ function BlogPreview() {
             <div className="p-5 sm:p-6">
               <span className="px-2.5 py-1 text-xs rounded-full bg-orange-200 text-black font-medium">{post.tag}</span>
               <h3 className="text-base sm:text-lg font-semibold mt-3 leading-snug">{post.title}</h3>
-              <button onClick={() => navigate("/blog")} className="mt-4 text-purple-300 text-sm flex items-center gap-1">
+              <button onClick={() => navigate(`/blog/${post.slug}`)} className="mt-4 text-purple-300 text-sm flex items-center gap-1">
                 Read Insight <FiArrowRight size={13} />
               </button>
             </div>

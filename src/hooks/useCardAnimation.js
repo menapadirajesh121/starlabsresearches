@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-export default function useCardAnimation() {
+export default function useCardAnimation(deps = []) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -13,6 +13,9 @@ export default function useCardAnimation() {
     if (!el) return;
 
     const cards = Array.from(el.querySelectorAll(".card-animate"));
+
+    // Reset so re-filtered cards animate in again
+    cards.forEach((card) => card.classList.remove("in-view"));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -30,7 +33,8 @@ export default function useCardAnimation() {
 
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
   return ref;
 }

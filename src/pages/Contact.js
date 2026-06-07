@@ -11,15 +11,22 @@ const iconMap = { FiBook, FiAward, FiGithub, FiLinkedin, FiClock, FiMail };
 /* ================= HERO ================= */
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-[#26143a] via-[#1f1030] to-[#180c26] py-14 sm:py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-14 sm:py-20 md:py-24 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&auto=format&fit=crop&q=80"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-[#020d18]/82 pointer-events-none" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* left-aligned */}
-        <span className="inline-block px-4 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/25 text-xs sm:text-sm text-purple-300 mb-5">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-xs sm:text-sm text-blue-200 mb-5">
           {d.hero.badge}
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-3xl">
           {d.hero.title}{" "}
-          <span className="text-purple-300">{d.hero.highlight}</span>
+          <span className="text-blue-300">{d.hero.highlight}</span>
           {" "}{d.hero.suffix}
         </h1>
         <p className="max-w-xl mt-5 text-sm sm:text-base md:text-lg text-gray-300 leading-7">
@@ -185,8 +192,15 @@ function ContactSidebar() {
       <div className="space-y-3">
         {d.footprint.links.map((link, i) => {
           const Icon = iconMap[link.icon] || FiBook;
+          const hrefs = [
+            "https://scholar.google.com",
+            "https://orcid.org",
+            "https://github.com",
+            "https://linkedin.com",
+          ];
           return (
-            <div key={i} className="bg-[#17131f] border border-white/5 rounded-xl p-4 flex items-center gap-3 hover:border-white/15 transition-colors cursor-pointer">
+            <a key={i} href={hrefs[i]} target="_blank" rel="noreferrer"
+              className="bg-[#17131f] border border-white/5 rounded-xl p-4 flex items-center gap-3 hover:border-white/15 transition-colors">
               <div className="w-10 h-10 rounded-xl bg-[#241a32] flex items-center justify-center text-purple-300 shrink-0">
                 <Icon size={15} />
               </div>
@@ -194,7 +208,7 @@ function ContactSidebar() {
                 <h4 className="font-medium text-sm">{link.title}</h4>
                 <p className="text-xs text-gray-400 mt-0.5 truncate">{link.subtitle}</p>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>
@@ -270,12 +284,12 @@ export default function Contact() {
         </div>
 
         {/* two-col grid: form left, sidebar right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start">
           <div>
             <ContactForm />
             <InfoCards />
           </div>
-          <div className="lg:sticky lg:top-24">
+          <div className="lg:sticky lg:top-28">
             <ContactSidebar />
           </div>
         </div>

@@ -1,222 +1,382 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FiArrowRight, FiDownload, FiAward } from "react-icons/fi";
-import { FaAtom } from "react-icons/fa";
+import {
+  FiStar,
+  FiSearch,
+  FiShield,
+  FiUsers,
+  FiZap,
+  FiBookOpen,
+  FiArrowRight,
+  FiTwitter,
+  FiGithub,
+  FiLinkedin,
+  FiMapPin,
+} from "react-icons/fi";
 import d from "../data/aboutData.json";
-import useCardAnimation from "../hooks/useCardAnimation";
 
-/* ================= HERO ================= */
-function Hero() {
-  const navigate = useNavigate();
-  return (
-    <section className="bg-gradient-to-br from-[#2a163d] via-[#221236] to-[#1a0d2a] py-14 sm:py-20 md:py-24 lg:py-28">
-      <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-        <img
-          src={d.hero.img}
-          alt="Alex"
-          className="w-24 sm:w-32 md:w-36 h-24 sm:h-32 md:h-36 rounded-full object-cover border-4 border-purple-400 mx-auto shadow-lg shadow-purple-900/40"
-        />
-        <div className="mt-5 inline-block bg-[#3d274d] text-purple-300 px-4 py-1.5 rounded-full text-xs font-medium">
-          {d.hero.badge}
-        </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 leading-tight">
-          {d.hero.title}{" "}
-          <span className="text-purple-300 italic">{d.hero.highlight}</span>
-          <br />{d.hero.subtitle}
-        </h1>
-        <p className="text-gray-300 mt-5 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
-          {d.hero.paragraph}
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-3 mt-8">
-          <button
-            onClick={() => navigate("/contact")}
-            className="bg-purple-400 text-black px-7 py-3 rounded-full flex items-center justify-center gap-2 font-semibold text-sm sm:text-base"
-          >
-            {d.hero.primaryBtn} <FiArrowRight />
-          </button>
-          <a
-            href="/cv.pdf"
-            download
-            className="border border-white/20 px-7 py-3 rounded-full flex items-center justify-center gap-2 text-sm sm:text-base hover:bg-white/5 transition-colors"
-          >
-            <FiDownload /> {d.hero.secondaryBtn}
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
+const iconMap = { FiSearch, FiShield, FiUsers, FiZap, FiBookOpen };
 
-/* ================= MAIN CONTENT ================= */
-function MainContent() {
-  const navigate = useNavigate();
-  const ref = useCardAnimation();
-  return (
-    <section ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
-
-        {/* LEFT — 2 cols wide: journey + timeline + goals */}
-        <div className="lg:col-span-2 space-y-10">
-
-          {/* Intro block */}
-          <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold flex items-center gap-3 mb-6">
-              <FaAtom className="text-purple-300 shrink-0" />
-              My Academic Journey
-            </h2>
-            <div className="card-animate card-interactive bg-[#17131f] p-6 sm:p-8 rounded-2xl border border-white/5 space-y-4">
-              {d.journey.intro.map((p, i) => (
-                <p key={i} className="text-gray-300 leading-7 text-sm sm:text-base">{p}</p>
-              ))}
-            </div>
-          </div>
-
-          {/* Timeline */}
-          <div>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8">
-              <h3 className="text-2xl sm:text-3xl font-bold">Education & Experience</h3>
-              <a
-                href="/cv.pdf"
-                download
-                className="self-start sm:self-auto bg-[#2a163d] hover:bg-[#361d4f] transition-colors px-4 py-2 rounded-full text-xs sm:text-sm flex items-center gap-2"
-              >
-                <FiDownload size={13} /> Curriculum Vitae
-              </a>
-            </div>
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-purple-400/25 space-y-8 sm:space-y-10">
-              {d.journey.timeline.map((item, i) => (
-                <TimelineItem key={i} {...item} />
-              ))}
-            </div>
-          </div>
-
-          {/* Goals card */}
-          <div className="card-animate card-interactive bg-[#1a1524] rounded-2xl p-6 sm:p-8 border border-white/5">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-purple-400 text-black p-3 rounded-xl shrink-0">
-                <FiAward size={18} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold">{d.goals.title}</h3>
-            </div>
-            <p className="text-gray-300 leading-7 text-sm sm:text-base">{d.goals.desc}</p>
-            <button
-              onClick={() => navigate("/research")}
-              className="text-purple-300 mt-5 flex items-center gap-2 text-sm sm:text-base hover:gap-3 transition-all"
-            >
-              {d.goals.btn} <FiArrowRight />
-            </button>
-          </div>
-
-        </div>
-
-        {/* RIGHT — sidebar: snapshot + collab */}
-        <div className="space-y-6">
-
-          {/* Research snapshot */}
-          <div className="card-animate card-interactive bg-[#17131f] rounded-2xl p-6 sm:p-7 border border-white/5">
-            <h3 className="font-bold text-lg mb-6">Research Snapshot</h3>
-            <TagGroup title="INTERESTS" items={d.snapshot.interests} />
-            <TagGroup title="TECHNICAL SKILLS" items={d.snapshot.skills} />
-            <div className="mt-6">
-              <h4 className="text-purple-300 mb-4 font-semibold text-xs sm:text-sm uppercase tracking-wider">Academic Honors</h4>
-              <div className="space-y-3 text-sm text-gray-300">
-                {d.snapshot.honors.map((h, i) => (
-                  <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0">
-                    <span>{h.label}</span>
-                    <span className="text-purple-300 font-medium ml-4 shrink-0">{h.year}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <a
-              href="/cv.pdf"
-              download
-              className="mt-7 w-full bg-purple-400 text-black py-3 rounded-xl font-semibold flex items-center justify-center gap-2 text-sm hover:bg-purple-300 transition-colors"
-            >
-              <FiDownload /> Download Full CV
-            </a>
-          </div>
-
-          {/* Open for Collaboration */}
-          <div className="card-animate card-interactive bg-gradient-to-br from-[#241822] to-[#1e1520] border border-orange-500/20 rounded-2xl p-6 sm:p-7">
-            <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
-              <span className="text-orange-400 text-lg">🤝</span>
-            </div>
-            <h3 className="text-xl font-bold">Open for Collaboration</h3>
-            <p className="text-gray-400 mt-3 text-sm leading-6">
-              Actively seeking PhD supervisors and international research partners. Currently available for Fall 2025 positions.
-            </p>
-            <button
-              onClick={() => navigate("/contact")}
-              className="w-full mt-5 bg-orange-500/10 border border-orange-500/30 hover:bg-orange-500/20 transition-colors py-2.5 rounded-xl text-sm font-medium text-orange-300"
-            >
-              Connect with Alex
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ================= BOTTOM CTA ================= */
-function BottomCTA() {
-  const navigate = useNavigate();
-  return (
-    <section className="border-t border-white/5 py-10 sm:py-12 md:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold">{d.cta.title}</h2>
-            <p className="text-gray-400 mt-2 text-sm sm:text-base max-w-lg">{d.cta.desc}</p>
-          </div>
-          <button
-            onClick={() => navigate("/research")}
-            className="bg-purple-400 hover:bg-purple-300 transition-colors text-black px-7 py-3 rounded-full flex items-center gap-2 text-sm sm:text-base font-medium shrink-0"
-          >
-            {d.cta.btn} <FiArrowRight />
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ================= PAGE ================= */
 export default function About() {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#0f0c16] text-white min-h-screen">
-      <Hero />
-      <MainContent />
-      <BottomCTA />
+
+      {/* =========================
+          HERO
+      ========================== */}
+
+      <section className="bg-gradient-to-r from-[#040a22] via-[#05072d] to-[#11103b] py-28">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* LEFT */}
+
+            <div>
+
+              <span className="inline-block px-4 py-2 rounded-full bg-[#1a1731] border border-white/10 text-xs text-purple-200">
+                {d.hero.badge}
+              </span>
+
+              <h1 className="text-6xl lg:text-7xl font-bold mt-8 leading-tight">
+                {d.hero.title}
+                <br />
+                <span className="text-[#b58be8]">{d.hero.highlight}</span>
+              </h1>
+
+              {/* MISSION */}
+
+              <div className="mt-12 border-l-4 border-[#b58be8] pl-6">
+
+                <p className="text-sm uppercase tracking-wider text-[#b58be8]">
+                  {d.hero.mission.label}
+                </p>
+
+                <p className="mt-4 text-xl text-gray-300 leading-9">
+                  {d.hero.mission.text}
+                </p>
+
+              </div>
+
+              {/* VISION */}
+
+              <div className="mt-10 border-l-4 border-cyan-400 pl-6">
+
+                <p className="text-sm uppercase tracking-wider text-cyan-400">
+                  {d.hero.vision.label}
+                </p>
+
+                <p className="mt-4 text-gray-400 italic leading-8">
+                  {d.hero.vision.text}
+                </p>
+
+              </div>
+
+              <div className="flex gap-4 mt-12 flex-wrap">
+
+                <button onClick={() => navigate("/research")} className="bg-[#b58be8] text-black px-7 py-4 rounded-full font-medium">
+                  {d.hero.primaryBtn}
+                </button>
+
+                <button onClick={() => navigate("/research")} className="bg-[#1d1727] border border-white/10 px-7 py-4 rounded-full">
+                  {d.hero.secondaryBtn}
+                </button>
+
+              </div>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+
+            <div className="relative">
+
+              <div className="absolute right-0 bottom-0 w-[80%] h-[80%] rounded-3xl bg-[#14204b] opacity-40" />
+
+              <img
+                src={d.hero.image}
+                alt=""
+                className="relative rounded-3xl border border-white/10 shadow-2xl"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          CORE VALUES
+      ========================== */}
+
+      <section className="py-24">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <h2 className="text-5xl font-bold">{d.values.title}</h2>
+
+          <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
+            {d.values.subtitle}
+          </p>
+
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 mt-20">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {d.values.items.map((item) => {
+              const Icon = iconMap[item.icon];
+              return (
+                <ValueCard
+                  key={item.title}
+                  icon={<Icon />}
+                  title={item.title}
+                  text={item.text}
+                />
+              );
+            })}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          OUR EVOLUTION
+      ========================== */}
+
+      <section className="py-24 bg-[#12101d]">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="grid lg:grid-cols-[380px_1fr] gap-16">
+
+            {/* LEFT */}
+
+            <div>
+
+              <h2 className="text-5xl font-bold">{d.evolution.title}</h2>
+
+              <p className="text-gray-400 mt-8 leading-8">
+                {d.evolution.subtitle}
+              </p>
+
+              <img
+                src={d.evolution.image}
+                alt=""
+                className="mt-10 rounded-3xl border border-white/5"
+              />
+
+            </div>
+
+            {/* TIMELINE */}
+
+            <div className="space-y-14">
+
+              {d.evolution.timeline.map((item) => (
+                <TimelineItem
+                  key={item.year}
+                  year={item.year}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          CTA SECTION
+      ========================== */}
+
+      <section
+        className="relative py-24 overflow-hidden"
+        style={{
+          backgroundImage: `url('${d.cta.bgImage}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* purple overlay */}
+        <div className="absolute inset-0 bg-[#b58be8]/85" />
+
+        <div className="relative max-w-5xl mx-auto text-center px-6">
+
+          <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto">
+            <FiArrowRight className="text-black" size={28} />
+          </div>
+
+          <h2 className="text-5xl font-bold text-black mt-8">{d.cta.title}</h2>
+
+          <p className="text-black/70 text-xl mt-8 max-w-3xl mx-auto leading-9">
+            {d.cta.subtitle}
+          </p>
+
+          <div className="flex justify-center gap-4 mt-12 flex-wrap">
+
+            <button onClick={() => navigate("/contact")} className="bg-black text-white px-8 py-4 rounded-full font-medium">
+              {d.cta.primaryBtn}
+            </button>
+
+            <button onClick={() => navigate("/contact")} className="border border-black/20 px-8 py-4 rounded-full text-black">
+              {d.cta.secondaryBtn}
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================
+          FOOTER
+      ========================== */}
+
+      <footer className="bg-[#16111d] py-20">
+
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+
+          {/* BRAND */}
+
+          <div>
+
+            <div className="flex items-center gap-3">
+
+              <div className="w-10 h-10 rounded-full bg-[#b58be8] flex items-center justify-center">
+                <FiStar className="text-black" />
+              </div>
+
+              <h2 className="text-2xl font-bold text-[#b58be8]">
+                Star Labs Researches
+              </h2>
+
+            </div>
+
+            <p className="text-gray-400 mt-6 leading-8">
+              {d.footer.brand.desc}
+            </p>
+
+            <div className="flex gap-4 mt-6 text-xl">
+              <a href="https://twitter.com" target="_blank" rel="noreferrer"><FiTwitter /></a>
+              <a href="https://github.com" target="_blank" rel="noreferrer"><FiGithub /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FiLinkedin /></a>
+            </div>
+
+          </div>
+
+          {/* NAVIGATION */}
+
+          <div>
+
+            <h4 className="font-semibold mb-5">Navigation</h4>
+
+            <div className="space-y-3 text-gray-400">
+              {d.footer.navigation.map((item) => (
+                <p key={item} className="cursor-pointer hover:text-white" onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}>{item}</p>
+              ))}
+            </div>
+
+          </div>
+
+          {/* RESOURCES */}
+
+          <div>
+
+            <h4 className="font-semibold mb-5">Resources</h4>
+
+            <div className="space-y-3 text-gray-400">
+              {d.footer.resources.map((item) => (
+                <button key={item} className="block hover:text-white">{item}</button>
+              ))}
+            </div>
+
+          </div>
+
+          {/* AFFILIATION */}
+
+          <div>
+
+            <h4 className="font-semibold mb-5">Institutional Affiliation</h4>
+
+            <div className="space-y-3 text-gray-400">
+
+              <p className="flex items-center gap-2">
+                <FiMapPin />
+                {d.footer.affiliation.dept}
+              </p>
+
+              <p>{d.footer.affiliation.university}</p>
+
+              <p>{d.footer.affiliation.location}</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 border-t border-white/5 mt-14 pt-8 flex flex-col md:flex-row justify-between text-sm text-gray-500">
+
+          <p>{d.footer.copyright}</p>
+
+          <p>{d.footer.seo}</p>
+
+        </div>
+
+      </footer>
+
     </div>
   );
 }
 
-/* ================= HELPERS ================= */
-function TimelineItem({ year, title, school, desc }) {
-  return (
-    <div className="relative">
-      {/* dot */}
-      <div className="absolute -left-[25px] sm:-left-[33px] top-1.5 w-4 h-4 rounded-full bg-purple-400 border-4 border-[#0f0c16] shrink-0" />
-      <p className="text-purple-300 text-xs font-semibold uppercase tracking-wider mb-1">{year}</p>
-      <h4 className="text-base sm:text-lg font-bold">{title}</h4>
-      <p className="text-gray-500 text-xs sm:text-sm mt-0.5">{school}</p>
-      <p className="text-gray-300 mt-2 text-sm leading-6">{desc}</p>
-    </div>
-  );
-}
+/* =========================
+   VALUE CARD
+========================= */
 
-function TagGroup({ title, items }) {
+function ValueCard({ icon, title, text }) {
   return (
-    <div className="mb-5">
-      <h4 className="text-purple-300 font-semibold mb-3 text-xs uppercase tracking-wider">{title}</h4>
-      <div className="flex flex-wrap gap-1.5">
-        {items.map((item) => (
-          <span key={item} className="bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg text-xs">{item}</span>
-        ))}
+    <div className="bg-[#17131f] border border-white/5 rounded-3xl p-8 text-left">
+
+      <div className="w-12 h-12 rounded-xl bg-[#211a2d] flex items-center justify-center text-[#b58be8] text-xl">
+        {icon}
       </div>
+
+      <h3 className="text-2xl font-bold mt-6">{title}</h3>
+
+      <p className="text-gray-400 mt-4 leading-8">{text}</p>
+
+    </div>
+  );
+}
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+
+function TimelineItem({ year, title, description }) {
+  return (
+    <div className="relative pl-10">
+
+      <div className="absolute left-0 top-2 w-4 h-4 rounded-full bg-[#b58be8]" />
+
+      <div className="absolute left-[7px] top-6 bottom-[-60px] w-[2px] bg-[#3c2c54]" />
+
+      <p className="text-[#b58be8] font-medium">{year}</p>
+
+      <h3 className="text-3xl font-bold mt-3">{title}</h3>
+
+      <p className="text-gray-400 mt-4 leading-8">{description}</p>
+
     </div>
   );
 }

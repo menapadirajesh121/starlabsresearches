@@ -1,43 +1,60 @@
 {
   "hero": {
-    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    "badge": "PhD Candidate • Space Observation",
-    "title": "Hi, I'm Alex. I study the",
-    "highlight": "unseen rhythms",
-    "subtitle": "of our universe.",
-    "paragraph": "Astrophysics research student at Global Space University, dedicated to computational modeling of dark matter and early galaxy formation.",
-    "primaryBtn": "Get In Touch",
-    "secondaryBtn": "Download CV"
+    "badge": "Exploring the Final Frontier",
+    "title": "Star Labs",
+    "highlight": "Researches",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200",
+    "mission": {
+      "label": "Our Mission",
+      "text": "Star Labs Researches exists to conduct meaningful research in astronomy while fostering a culture of curiosity, scientific integrity, and continuous learning."
+    },
+    "vision": {
+      "label": "Our Vision",
+      "text": "To develop Star Labs Researches into a recognized independent research initiative that contributes to astronomy through high-quality research and international collaborations."
+    },
+    "primaryBtn": "View Publications",
+    "secondaryBtn": "Our Projects"
   },
-  "journey": {
-    "intro": [
-      "Ever since looking through a hand-me-down telescope at age nine, the silence of the stars has been my favorite puzzle.",
-      "My research aims to bridge the gap between theoretical predictions and observational datasets."
-    ],
-    "timeline": [
-      { "year": "2021 - Present", "title": "PhD in Astrophysics (Candidate)", "school": "Global Space University", "desc": "Developing Bayesian inference pipelines for dark matter substructures." },
-      { "year": "2019 - 2021", "title": "MSc in Physics & Astronomy", "school": "University of Stellar Heights", "desc": "Graduated with distinction and specialized in cosmology." },
-      { "year": "2020 Summer", "title": "Research Fellow", "school": "International Observatory Center", "desc": "Collaborated with the data science team on supernova detection." },
-      { "year": "2015 - 2019", "title": "BSc in Mathematical Physics", "school": "Institute of Fundamental Science", "desc": "Focused on quantum mechanics and relativity." }
+  "values": {
+    "title": "Core Values",
+    "subtitle": "The principles that guide our pursuit of cosmic understanding and scientific excellence.",
+    "items": [
+      { "icon": "FiSearch", "title": "Scientific Curiosity", "text": "The engine of our discovery, pushing us to ask the questions that define our understanding of the universe." },
+      { "icon": "FiShield", "title": "Integrity", "text": "Upholding the highest standards of scientific rigor, transparency, and ethical conduct in every data point." },
+      { "icon": "FiUsers", "title": "Collaboration", "text": "Breaking silos to work with international experts, combining physics, astronomy and data science." },
+      { "icon": "FiZap", "title": "Continuous Learning", "text": "Staying at the edge of computational methods and interdisciplinary approaches." },
+      { "icon": "FiBookOpen", "title": "Open Knowledge", "text": "Committing to sharing our findings through publications and educational resources." }
     ]
   },
-  "goals": {
-    "title": "PhD Goals & Aspirations",
-    "desc": "My ultimate goal is to contribute to the Cosmological Standard Model by providing empirical evidence for the nature of dark matter.",
-    "btn": "Learn about my active research"
-  },
-  "snapshot": {
-    "interests": ["Dark Matter", "Galaxy Formation", "Bayesian Stats", "Cosmology"],
-    "skills": ["Python", "NumPy", "PyTorch", "C++", "TensorFlow", "SQL", "LaTeX", "GitHub"],
-    "honors": [
-      { "label": "National Space Fellowship", "year": "2023" },
-      { "label": "Best Poster Award", "year": "2022" },
-      { "label": "Provost Excellence", "year": "2021" }
+  "evolution": {
+    "title": "Our Evolution",
+    "subtitle": "From a small independent initiative to a growing hub for astronomical data science and interdisciplinary research.",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900",
+    "timeline": [
+      { "year": "2024", "title": "International Expansion", "description": "Secured three major international collaborations for observational data analysis." },
+      { "year": "2023", "title": "Computational Hub", "description": "Established our dedicated high-performance computing cluster for dark matter simulations." },
+      { "year": "2022", "title": "Star Labs Founded", "description": "Launched the initiative with a focus on addressing fundamental scientific questions through data." }
     ]
   },
   "cta": {
-    "title": "Want to see my recent publications?",
-    "desc": "Check out the technical portfolio including active projects.",
-    "btn": "Explore Research"
+    "title": "Advance Science With Us",
+    "subtitle": "Whether you are a researcher, educator, or student, there are many ways to collaborate with Star Labs Researches.",
+    "bgImage": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1800",
+    "primaryBtn": "Join the Team",
+    "secondaryBtn": "Partner With Us"
+  },
+  "footer": {
+    "brand": {
+      "desc": "Astrophysics research student exploring the cosmos, data by data. Pursuing the origins of the universe through computational modelling."
+    },
+    "navigation": ["Home", "About", "Research", "Blog", "Contact"],
+    "resources": ["Google Scholar", "ORCID Profile", "ArXiv Preprints", "CV Download"],
+    "affiliation": {
+      "dept": "Department of Physics & Astronomy",
+      "university": "Global Space University",
+      "location": "Stardust City, SC 90210"
+    },
+    "copyright": "© 2026 Star Labs Researches. Built for the stars.",
+    "seo": "SEO: Astrophysics PhD candidate research portfolio"
   }
 }

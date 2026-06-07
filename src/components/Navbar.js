@@ -8,6 +8,7 @@ const links = [
   { to: "/about", label: "About" },
   { to: "/research", label: "Research" },
   { to: "/blog", label: "Blog" },
+  { to: "/team", label: "Team" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -20,8 +21,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
 
         {/* LEFT — Logo */}
-        <NavLink to="/" className="flex items-center gap-2.5 shrink-0 mt-4">
-          <img src={logo} alt="StarLabs" style={{ width: "220px", height: "auto" }} />
+        <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
+          <img src={logo} alt="StarLabs" className="w-36 sm:w-44 lg:w-52" style={{ height: "auto" }} />
         </NavLink>
 
         {/* RIGHT — Nav links + Connect button (desktop) */}
