@@ -1,17 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  FiStar,
   FiSearch,
   FiShield,
   FiUsers,
   FiZap,
   FiBookOpen,
   FiArrowRight,
-  FiTwitter,
-  FiGithub,
-  FiLinkedin,
-  FiMapPin,
 } from "react-icons/fi";
 import d from "../data/aboutData.json";
 
