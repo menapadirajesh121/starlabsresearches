@@ -1,61 +1,75 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FiTwitter, FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 import logo from "../images/starlabs_logo.png";
+import d from "../data/aboutData.json";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
-    <footer className="bg-[#0d0a14] border-t border-white/10 py-12 sm:py-14 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
+    <footer className="bg-[#16111d] py-20">
 
-        <div className="col-span-1 sm:col-span-2 md:col-span-1">
-          <div className="flex items-center mb-3">
-            <img src={logo} alt="StarLabs" className="w-36 sm:w-44 lg:w-52" style={{ height: "auto" }} />
-          </div>
-          <p className="text-gray-400 text-sm mt-3 leading-6 max-w-xs">
-            Research Student exploring the cosmos through computation and observation.
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+
+        {/* BRAND */}
+        <div>
+          <img src={logo} alt="StarLabs" className="w-40" style={{ height: "auto" }} />
+          <p className="text-gray-400 mt-6 leading-8">
+            {d.footer.brand.desc}
           </p>
+          <div className="flex gap-4 mt-6 text-xl text-gray-400">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiTwitter /></a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiGithub /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiLinkedin /></a>
+          </div>
         </div>
 
+        {/* NAVIGATION */}
         <div>
-          <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Navigation</h4>
-          <div className="space-y-2 sm:space-y-3">
-            {["/", "/about", "/research", "/blog", "/contact", "/team"].map((to, i) => (
-              <Link
-                key={to}
-                to={to}
-                className="block text-gray-400 hover:text-purple-300 transition-colors text-sm"
+          <h4 className="font-semibold mb-5">Navigation</h4>
+          <div className="space-y-3 text-gray-400">
+            {d.footer.navigation.map((item) => (
+              <p
+                key={item}
+                className="cursor-pointer hover:text-white transition-colors"
+                onClick={() => navigate(item === "Home" ? "/" : `/${item.toLowerCase()}`)}
               >
-                {["Home", "About", "Research", "Blog", "Contact", "Team"][i]}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Resources</h4>
-          <div className="space-y-2 sm:space-y-3">
-            {["Google Scholar", "ORCID", "Arxiv", "GitHub"].map((item) => (
-              <button key={item} type="button" className="block text-gray-400 hover:text-purple-300 transition-colors text-sm text-left">
                 {item}
-              </button>
+              </p>
             ))}
           </div>
         </div>
 
+        {/* RESOURCES */}
         <div>
-          <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Institution</h4>
-          <p className="text-gray-400 text-sm leading-6">
-            Department of Physics & Astronomy
-            <br />Global Space University
-            <br />Stardust City, SC 90210
-          </p>
+          <h4 className="font-semibold mb-5">Resources</h4>
+          <div className="space-y-3 text-gray-400">
+            {d.footer.resources.map((item) => (
+              <button key={item} className="block hover:text-white transition-colors">{item}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* AFFILIATION */}
+        <div>
+          <h4 className="font-semibold mb-5">Institutional Affiliation</h4>
+          <div className="space-y-3 text-gray-400">
+            <p className="flex items-center gap-2">
+              <FiMapPin />
+              {d.footer.affiliation.dept}
+            </p>
+            <p>{d.footer.affiliation.university}</p>
+            <p>{d.footer.affiliation.location}</p>
+          </div>
         </div>
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-gray-500 text-xs sm:text-sm">© 2024 StarLabs Researches. All rights reserved.</p>
-        <p className="text-gray-500 text-xs sm:text-sm">Built with ❤️ for the cosmos</p>
+      <div className="max-w-7xl mx-auto px-6 border-t border-white/5 mt-14 pt-8 flex flex-col md:flex-row justify-between text-sm text-gray-500">
+        <p>{d.footer.copyright}</p>
+        <p>{d.footer.seo}</p>
       </div>
+
     </footer>
   );
 }
