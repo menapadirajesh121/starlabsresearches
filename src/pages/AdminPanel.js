@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { FiEdit2, FiTrash2, FiPlus, FiX, FiLogOut, FiRefreshCw, FiBookOpen, FiFileText } from "react-icons/fi";
 
-const API = "http://localhost:5000/api";
+const API = "https://starlabsresearches.onrender.com/api";
 const ALLOWED_IMAGE_HOSTS = ["images.unsplash.com", "upload.wikimedia.org", "i.imgur.com"];
 
 function isSafeImageUrl(url) {

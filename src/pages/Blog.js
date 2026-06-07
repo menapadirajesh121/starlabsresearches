@@ -6,7 +6,7 @@ import {
 } from "react-icons/fi";
 import staticData from "../data/blogData.json";
 
-const API           = "http://localhost:5000/api";
+const API           = "https://starlabsresearches.onrender.com/api";
 const POSTS_PER_PAGE = 3;
 
 function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }

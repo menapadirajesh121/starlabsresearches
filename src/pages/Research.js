@@ -6,7 +6,7 @@ import {
 import staticData from "../data/researchData.json";
 import useCardAnimation from "../hooks/useCardAnimation";
 
-const API = "http://localhost:5000/api";
+const API = "https://starlabsresearches.onrender.com/api";
 
 /* ─── Hero ───────────────────────────────────────────── */
 function Hero({ pubRef }) {

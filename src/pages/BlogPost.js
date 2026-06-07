@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiCalendar, FiClock } from "react-icons/fi";
 import d from "../data/blogData.json";
 
-const API = "http://localhost:5000/api";
+const API = "https://starlabsresearches.onrender.com/api";
 
 export default function BlogPost() {
   const { id } = useParams();
