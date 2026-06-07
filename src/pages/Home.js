@@ -124,9 +124,10 @@ function AboutSnippet() {
 function BlogPreview() {
   const navigate = useNavigate();
   const ref = useCardAnimation();
+  const posts = d.posts.filter(p => p.slug);
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-18 lg:py-20">
-      {/* section header — left label, right link */}
       <div className="flex items-end justify-between mb-10 sm:mb-12">
         <div>
           <p className="text-purple-300 uppercase tracking-widest text-xs sm:text-sm font-semibold mb-2">Blog</p>
@@ -138,13 +139,13 @@ function BlogPreview() {
       </div>
 
       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        {d.posts.map((post, i) => (
-          <div key={i} className="card-animate card-interactive bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+        {posts.map((post, i) => (
+          <div key={post.slug || post._id || i} className="card-animate card-interactive bg-[#17121f] border border-white/10 rounded-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
             <div className="overflow-hidden">
               <img src={post.image} alt={post.title} className="h-44 sm:h-48 lg:h-52 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div className="p-5 sm:p-6">
-              <span className="px-2.5 py-1 text-xs rounded-full bg-orange-200 text-black font-medium">{post.tag}</span>
+              <span className="px-2.5 py-1 text-xs rounded-full bg-orange-200 text-black font-medium">{post.tag || post.category}</span>
               <h3 className="text-base sm:text-lg font-semibold mt-3 leading-snug">{post.title}</h3>
               <button onClick={() => navigate(`/blog/${post.slug}`)} className="mt-4 text-purple-300 text-sm flex items-center gap-1">
                 Read Insight <FiArrowRight size={13} />

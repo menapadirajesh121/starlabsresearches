@@ -22,6 +22,42 @@
   },
   "posts": [
     {
+      "id": 13,
+      "slug": "the-physics-of-quasars",
+      "category": "Deep Space",
+      "date": "November 20, 2023",
+      "readTime": "7 min read",
+      "title": "The Physics of Quasars",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200",
+      "excerpt": "Quasars are the brightest objects in the universe, powered by supermassive black holes devouring matter at the centres of distant galaxies. Here's what we know.",
+      "tags": ["QUASARS", "BLACKHOLES", "DEEPSPACE"],
+      "content": "Quasars are the brightest objects in the universe, powered by supermassive black holes devouring matter at the centres of distant galaxies. Here's what we know.\n\nA quasar—short for quasi-stellar object—can outshine an entire galaxy of 100 billion stars from a region no larger than our solar system. The energy source is gravitational: as gas and dust spiral into a supermassive black hole, friction and compression heat the accretion disk to millions of degrees, releasing enormous amounts of radiation across the electromagnetic spectrum.\n\nThe most luminous quasars observed emit energy equivalent to 10 trillion suns. At cosmological distances, they serve as powerful backlights for studying the intergalactic medium—the gas between galaxies absorbs specific wavelengths, leaving fingerprints that reveal the composition and structure of the early universe.\n\nRecent surveys using the James Webb Space Telescope have uncovered quasars active just 670 million years after the Big Bang, raising profound questions about how supermassive black holes grew so large so quickly. The leading models struggle to explain seeds that massive forming in such a short time.\n\nUnderstanding quasars is ultimately understanding the life cycle of galaxies. Every large galaxy likely hosted a quasar phase—our own Milky Way's central black hole, Sagittarius A*, is a dormant one."
+    },
+    {
+      "id": 14,
+      "slug": "simulating-the-big-bang",
+      "category": "Computational",
+      "date": "November 05, 2023",
+      "readTime": "9 min read",
+      "title": "Simulating the Big Bang",
+      "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200",
+      "excerpt": "Recreating the first moments of the universe on a supercomputer is one of the most ambitious challenges in computational astrophysics. Here's how we do it.",
+      "tags": ["SIMULATION", "COSMOLOGY", "COMPUTATION"],
+      "content": "Recreating the first moments of the universe on a supercomputer is one of the most ambitious challenges in computational astrophysics. Here's how we do it.\n\nAt t=0 the universe was an infinitely hot, dense singularity. Within the first second it had cooled enough to form protons and neutrons. Within three minutes, nucleosynthesis had produced the first helium and deuterium. 380,000 years later, electrons combined with nuclei and the universe became transparent—releasing the cosmic microwave background we still detect today.\n\nModern cosmological simulations don't start at t=0. They begin at the CMB epoch, using the temperature fluctuations in that ancient light as initial conditions. Tiny overdensities—regions slightly denser than average—become the seeds of all future structure.\n\nOur simulation pipeline uses a modified version of GADGET-4 running on 8,192 CPU cores. We evolve 10 billion particles from z=127 to z=0, tracking how gravity amplifies those initial fluctuations into the filaments, voids, and galaxy clusters we observe today.\n\nThe hardest part isn't compute time—it's the baryonic physics. Gas cooling, star formation, supernova feedback, and black hole accretion all operate on scales far below our resolution limit. We model them with sub-grid recipes tuned to match observations, but the uncertainty compounds over 13 billion years of evolution."
+    },
+    {
+      "id": 15,
+      "slug": "the-jwst-era-begins",
+      "category": "Observation",
+      "date": "October 28, 2023",
+      "readTime": "8 min read",
+      "title": "The JWST Era Begins",
+      "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200",
+      "excerpt": "The James Webb Space Telescope has fundamentally changed what is possible in observational astronomy. A look at its first two years of science.",
+      "tags": ["JWST", "OBSERVATION", "GALAXIES"],
+      "content": "The James Webb Space Telescope has fundamentally changed what is possible in observational astronomy. A look at its first two years of science.\n\nLaunched on Christmas Day 2021 and fully operational by mid-2022, JWST is the largest space telescope ever deployed. Its 6.5-metre segmented gold mirror and suite of infrared instruments give it a capability that Hubble, operating primarily in optical and UV, simply cannot match.\n\nThe first deep field image, released in July 2022, showed thousands of galaxies in a patch of sky the size of a grain of sand held at arm's length—some of them over 13 billion years old. Light that left before Earth existed, finally arriving at our detector.\n\nIn its first two years, JWST has detected the most distant galaxy ever confirmed (at redshift z=13.2), found carbon dioxide in an exoplanet atmosphere for the first time, revealed previously hidden stellar nurseries inside nearby nebulae, and discovered a surprisingly mature galaxy just 500 million years after the Big Bang—challenging our models of how quickly structure can form.\n\nFor our group, the most exciting development is JWST's ability to do spectroscopy on faint, high-redshift galaxies that were entirely inaccessible before. We are now measuring metallicities—chemical abundances—in galaxies seen as they were 12 billion years ago. The data is rewriting the textbooks in real time."
+    },
+    {
       "id": 1,
       "slug": "chasing-shadows-the-quest-for-dark-matter-candidates",
       "category": "Research Logs",

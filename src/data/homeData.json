@@ -21,9 +21,9 @@
     ]
   },
   "posts": [
-    { "title": "The Physics of Quasars", "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564", "tag": "Deep Space" },
-    { "title": "Simulating the Big Bang", "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca", "tag": "Computational" },
-    { "title": "The JWST Era Begins", "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa", "tag": "Observation" }
+    { "title": "The Physics of Quasars", "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564", "tag": "Deep Space", "slug": "the-physics-of-quasars" },
+    { "title": "Simulating the Big Bang", "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca", "tag": "Computational", "slug": "simulating-the-big-bang" },
+    { "title": "The JWST Era Begins", "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa", "tag": "Observation", "slug": "the-jwst-era-begins" }
   ],
   "cards": [
     { "title": "The Researcher", "desc": "Discover my academic journey, milestones, and experiences.", "btn": "View Full Profile", "bg": "bg-[#3b2157]", "btnClass": "bg-purple-300 text-black", "link": "/about" },
