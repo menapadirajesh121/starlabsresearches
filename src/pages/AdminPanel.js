@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { FiEdit2, FiTrash2, FiPlus, FiX, FiLogOut, FiRefreshCw, FiBookOpen, FiFileText } from "react-icons/fi";
-
-const API = "https://starlabsresearches.onrender.com/api";
+import { API } from "../utils/api";
 const ALLOWED_IMAGE_HOSTS = ["images.unsplash.com", "upload.wikimedia.org", "i.imgur.com"];
 
 function isSafeImageUrl(url) {
@@ -16,16 +15,16 @@ const inp  = "w-full bg-[#0e0a15] border border-white/10 rounded-xl px-4 py-2.5 
 const btnP = "bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 const btnG = "bg-white/10 hover:bg-white/15 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors";
 
-const BLOG_CATS      = ["Research Logs", "Academic Life", "Tutorials", "SpaceNews"];
+const BLOG_CATS     = ["Research Logs", "Academic Life", "Tutorials", "SpaceNews"];
 const RESEARCH_TYPES = ["Preprint", "Journal Article", "Conference Paper", "Working Paper"];
 
 const hdr = (token) => ({ "Content-Type": "application/json", Authorization: `Bearer ${token}` });
 
 /* ─── Login ─────────────────────────────────────────── */
 function Login({ onLogin }) {
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [err,  setErr]  = useState("");
-  const [busy, setBusy] = useState(false);
+  const [form, setForm]   = useState({ email: "", password: "" });
+  const [err, setErr]     = useState("");
+  const [busy, setBusy]   = useState(false);
 
   async function submit(e) {
     e.preventDefault();
@@ -35,7 +34,7 @@ function Login({ onLogin }) {
       const d = await r.json();
       if (!r.ok) return setErr(d.message);
       onLogin(d.token);
-    } catch { setErr("Cannot reach server. Make sure the backend is running on port 5000."); }
+    } catch { setErr("Cannot reach server. The backend may be starting up — please try again in a moment."); }
     finally  { setBusy(false); }
   }
 
@@ -59,8 +58,8 @@ function Login({ onLogin }) {
 function Stats({ blogs, research }) {
   return (
     <div className="grid grid-cols-2 gap-4 mb-6">
-      {[{ icon: <FiBookOpen size={18}/>, label: "Blog Posts",     val: blogs    },
-        { icon: <FiFileText size={18}/>, label: "Research Items", val: research }].map(s => (
+      {[{ icon: <FiBookOpen size={18}/>, label: "Blog Posts",      val: blogs    },
+        { icon: <FiFileText size={18}/>, label: "Research Items",  val: research }].map(s => (
         <div key={s.label} className="bg-[#17131f] border border-white/10 rounded-2xl p-5 flex items-center gap-4">
           <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-300">{s.icon}</div>
           <div>
@@ -239,9 +238,9 @@ function ResearchForm({ token, editData, onClose, onSaved }) {
 
 /* ─── Blog Panel ─────────────────────────────────────── */
 function BlogPanel({ token, onCountChange }) {
-  const [posts, setPosts] = useState([]);
-  const [form,  setForm]  = useState(null);
-  const [delId, setDelId] = useState(null);
+  const [posts,   setPosts]   = useState([]);
+  const [form,    setForm]    = useState(null); // null = closed, {} = new, {...post} = edit
+  const [delId,   setDelId]   = useState(null);
 
   const load = useCallback(async () => {
     try {
@@ -316,9 +315,9 @@ function BlogPanel({ token, onCountChange }) {
 
 /* ─── Research Panel ─────────────────────────────────── */
 function ResearchPanel({ token, onCountChange }) {
-  const [items, setItems] = useState([]);
-  const [form,  setForm]  = useState(null);
-  const [delId, setDelId] = useState(null);
+  const [items,  setItems]  = useState([]);
+  const [form,   setForm]   = useState(null);
+  const [delId,  setDelId]  = useState(null);
 
   const load = useCallback(async () => {
     try {
@@ -453,6 +452,7 @@ export default function AdminPanel() {
   const [resCount,  setResCount]  = useState(null);
   const [reloadKey, setReloadKey] = useState(0);
 
+  // Auto-seed check on first load
   useEffect(() => {
     if (!token) return;
     fetch(`${API}/seed/check`)
@@ -465,6 +465,7 @@ export default function AdminPanel() {
 
   return (
     <div className="min-h-screen bg-[#0e0a15] text-white">
+      {/* Header */}
       <header className="sticky top-0 z-40 bg-[#0e0a15]/90 backdrop-blur border-b border-white/10 px-6 py-4 flex items-center justify-between">
         <p className="font-bold text-lg">⭐ StarLabs Admin</p>
         <div className="flex items-center gap-2">

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiCalendar, FiClock } from "react-icons/fi";
 import d from "../data/blogData.json";
-
-const API = "https://starlabsresearches.onrender.com/api";
+import { API } from "../utils/api";
 
 export default function BlogPost() {
   const { id } = useParams();
