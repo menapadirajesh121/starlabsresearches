@@ -8,6 +8,8 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
   "https://starlabsresearches.vercel.app",
+  "https://starlabsresearches.com",
+  "https://www.starlabsresearches.com",
 ];
 
 app.use(cors({
