@@ -10,7 +10,7 @@ const allowedOrigins = [
   "https://starlabsresearches.vercel.app",
 ];
 
-app.options("*", cors());
+app.options("/(.*)", cors());
 app.use(cors({
   origin: (origin, cb) => {
     if (!origin || allowedOrigins.includes(origin) ||
