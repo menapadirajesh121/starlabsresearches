@@ -5,8 +5,7 @@ import {
   FiChevronLeft, FiMail, FiArrowRight, FiFilter, FiX,
 } from "react-icons/fi";
 import staticData from "../data/blogData.json";
-
-const API           = "https://starlabsresearches.onrender.com/api";
+import { API, warmup } from "../utils/api";
 const POSTS_PER_PAGE = 3;
 
 function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
@@ -245,6 +244,7 @@ export default function Blog() {
   const load = useCallback(async () => {
     setLoading(true); setError(false);
     try {
+      await warmup();
       const r = await fetch(`${API}/blogs?limit=200`);
       if (!r.ok) throw new Error();
       const d = await r.json();

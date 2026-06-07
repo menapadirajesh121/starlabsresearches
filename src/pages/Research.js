@@ -5,8 +5,7 @@ import {
 } from "react-icons/fi";
 import staticData from "../data/researchData.json";
 import useCardAnimation from "../hooks/useCardAnimation";
-
-const API = "https://starlabsresearches.onrender.com/api";
+import { API, warmup } from "../utils/api";
 
 /* ─── Hero ───────────────────────────────────────────── */
 function Hero({ pubRef }) {
@@ -259,6 +258,7 @@ export default function Research() {
     setLoading(true);
     setError(false);
     try {
+      await warmup();
       const r = await fetch(`${API}/research`);
       if (!r.ok) throw new Error();
       const items = await r.json();

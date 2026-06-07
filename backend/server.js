@@ -16,6 +16,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get("/api/ping", (_, res) => res.json({ ok: true }));
 app.use("/api/blogs",    require("./routes/blog"));
 app.use("/api/research", require("./routes/research"));
 app.use("/api/admin",    require("./routes/admin"));
