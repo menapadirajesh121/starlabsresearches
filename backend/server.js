@@ -4,14 +4,22 @@ const mongoose = require("mongoose");
 const cors     = require("cors");
 
 const app = express();
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://starlabsresearches.vercel.app",
+];
+
+app.options("*", cors());
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://starlabsresearches.vercel.app",
-    /\.vercel\.app$/,
-    /\.onrender\.com$/,
-  ],
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.includes(origin) ||
+        /\.vercel\.app$/.test(origin) || /\.onrender\.com$/.test(origin)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
