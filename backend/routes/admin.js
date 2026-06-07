@@ -15,11 +15,15 @@ router.post("/login", (req, res) => {
 
 // GET /api/admin/stats  — dashboard counts
 router.get("/stats", auth, async (req, res) => {
-  const [blogs, research] = await Promise.all([
-    Blog.countDocuments(),
-    Research.countDocuments(),
-  ]);
-  res.json({ blogs, research });
+  try {
+    const [blogs, research] = await Promise.all([
+      Blog.countDocuments(),
+      Research.countDocuments(),
+    ]);
+    res.json({ blogs, research });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 module.exports = router;

@@ -2,21 +2,30 @@ import { useState, useEffect, useCallback } from "react";
 import { FiEdit2, FiTrash2, FiPlus, FiX, FiLogOut, FiRefreshCw, FiBookOpen, FiFileText } from "react-icons/fi";
 
 const API = "http://localhost:5000/api";
+const ALLOWED_IMAGE_HOSTS = ["images.unsplash.com", "upload.wikimedia.org", "i.imgur.com"];
+
+function isSafeImageUrl(url) {
+  if (!url) return false;
+  try {
+    const { hostname, protocol } = new URL(url);
+    return (protocol === "https:" || protocol === "http:") && ALLOWED_IMAGE_HOSTS.includes(hostname);
+  } catch { return false; }
+}
 
 const inp  = "w-full bg-[#0e0a15] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 transition-colors";
 const btnP = "bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 const btnG = "bg-white/10 hover:bg-white/15 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors";
 
-const BLOG_CATS     = ["Research Logs", "Academic Life", "Tutorials", "SpaceNews"];
+const BLOG_CATS      = ["Research Logs", "Academic Life", "Tutorials", "SpaceNews"];
 const RESEARCH_TYPES = ["Preprint", "Journal Article", "Conference Paper", "Working Paper"];
 
 const hdr = (token) => ({ "Content-Type": "application/json", Authorization: `Bearer ${token}` });
 
 /* ─── Login ─────────────────────────────────────────── */
 function Login({ onLogin }) {
-  const [form, setForm]   = useState({ email: "", password: "" });
-  const [err, setErr]     = useState("");
-  const [busy, setBusy]   = useState(false);
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [err,  setErr]  = useState("");
+  const [busy, setBusy] = useState(false);
 
   async function submit(e) {
     e.preventDefault();
@@ -50,8 +59,8 @@ function Login({ onLogin }) {
 function Stats({ blogs, research }) {
   return (
     <div className="grid grid-cols-2 gap-4 mb-6">
-      {[{ icon: <FiBookOpen size={18}/>, label: "Blog Posts",      val: blogs    },
-        { icon: <FiFileText size={18}/>, label: "Research Items",  val: research }].map(s => (
+      {[{ icon: <FiBookOpen size={18}/>, label: "Blog Posts",     val: blogs    },
+        { icon: <FiFileText size={18}/>, label: "Research Items", val: research }].map(s => (
         <div key={s.label} className="bg-[#17131f] border border-white/10 rounded-2xl p-5 flex items-center gap-4">
           <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-300">{s.icon}</div>
           <div>
@@ -230,9 +239,9 @@ function ResearchForm({ token, editData, onClose, onSaved }) {
 
 /* ─── Blog Panel ─────────────────────────────────────── */
 function BlogPanel({ token, onCountChange }) {
-  const [posts,   setPosts]   = useState([]);
-  const [form,    setForm]    = useState(null); // null = closed, {} = new, {...post} = edit
-  const [delId,   setDelId]   = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [form,  setForm]  = useState(null);
+  const [delId, setDelId] = useState(null);
 
   const load = useCallback(async () => {
     try {
@@ -283,7 +292,7 @@ function BlogPanel({ token, onCountChange }) {
         )}
         {posts.map(p => (
           <div key={p._id} className="flex items-center gap-3 bg-[#17131f] border border-white/10 rounded-xl px-4 py-3.5 hover:border-white/20 transition-colors">
-            {p.image && <img src={p.image} alt="" className="w-12 h-12 rounded-xl object-cover shrink-0 hidden sm:block" onError={e => e.target.style.display = "none"} />}
+            {isSafeImageUrl(p.image) && <img src={p.image} alt="" className="w-12 h-12 rounded-xl object-cover shrink-0 hidden sm:block" onError={e => e.target.style.display = "none"} />}
             <div className="flex-1 min-w-0">
               <p className="font-semibold text-sm truncate">{p.title}</p>
               <div className="flex items-center gap-2 mt-0.5 flex-wrap">
@@ -307,9 +316,9 @@ function BlogPanel({ token, onCountChange }) {
 
 /* ─── Research Panel ─────────────────────────────────── */
 function ResearchPanel({ token, onCountChange }) {
-  const [items,  setItems]  = useState([]);
-  const [form,   setForm]   = useState(null);
-  const [delId,  setDelId]  = useState(null);
+  const [items, setItems] = useState([]);
+  const [form,  setForm]  = useState(null);
+  const [delId, setDelId] = useState(null);
 
   const load = useCallback(async () => {
     try {
@@ -360,7 +369,7 @@ function ResearchPanel({ token, onCountChange }) {
         )}
         {items.map(item => (
           <div key={item._id} className="flex items-center gap-3 bg-[#17131f] border border-white/10 rounded-xl px-4 py-3.5 hover:border-white/20 transition-colors">
-            {item.image && <img src={item.image} alt="" className="w-12 h-12 rounded-xl object-cover shrink-0 hidden sm:block" onError={e => e.target.style.display = "none"} />}
+            {isSafeImageUrl(item.image) && <img src={item.image} alt="" className="w-12 h-12 rounded-xl object-cover shrink-0 hidden sm:block" onError={e => e.target.style.display = "none"} />}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <p className="font-semibold text-sm">{item.title}</p>
@@ -444,7 +453,6 @@ export default function AdminPanel() {
   const [resCount,  setResCount]  = useState(null);
   const [reloadKey, setReloadKey] = useState(0);
 
-  // Auto-seed check on first load
   useEffect(() => {
     if (!token) return;
     fetch(`${API}/seed/check`)
@@ -457,7 +465,6 @@ export default function AdminPanel() {
 
   return (
     <div className="min-h-screen bg-[#0e0a15] text-white">
-      {/* Header */}
       <header className="sticky top-0 z-40 bg-[#0e0a15]/90 backdrop-blur border-b border-white/10 px-6 py-4 flex items-center justify-between">
         <p className="font-bold text-lg">⭐ StarLabs Admin</p>
         <div className="flex items-center gap-2">
