@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCardAnimation from "../hooks/useCardAnimation";
 import { FiCpu, FiGlobe, FiArrowRight } from "react-icons/fi";
-import { PiBinoculars } from "react-icons/pi";
 import d from "../data/homeData.json";
+
 
 const iconMap = { FiCpu, FiGlobe };
 
@@ -64,7 +64,7 @@ function AboutSnippet() {
   return (
     <section className="bg-[#0f0c16] py-14 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center justify-center">
 
           {/* LEFT */}
           <div>
@@ -91,8 +91,8 @@ function AboutSnippet() {
           {/* RIGHT — Current Focus card */}
           <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5">
             <div className="p-6 sm:p-8">
-              <div className="w-12 h-12 rounded-xl bg-[#2d2140] flex items-center justify-center">
-                <PiBinoculars size={22} className="text-[#b889ff]" />
+              <div className="rounded-xl flex items-start justify-start h-auto">
+                <img src="/faviion_logo.png" alt="favicon" style={{width:"17%"}} />
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold mt-6 text-white">Current Focus</h3>
             </div>
@@ -159,30 +159,30 @@ function BlogPreview() {
 }
 
 /* ================= PROMO CARDS ================= */
-function PromoCards() {
-  const navigate = useNavigate();
-  const ref = useCardAnimation();
-  return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-18 lg:pb-20">
-      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-        {d.cards.map((card, i) => (
-          <div key={i} className={`card-animate card-interactive rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
-            <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
-            <p className="text-gray-300 mt-4 text-sm sm:text-base flex-1">{card.desc}</p>
-            <div className="mt-8">
-              <button
-                onClick={() => navigate(card.link)}
-                className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-medium ${card.btnClass}`}
-              >
-                {card.btn}
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+// function PromoCards() {
+//   const navigate = useNavigate();
+//   const ref = useCardAnimation();
+//   return (
+//     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-18 lg:pb-20">
+//       <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+//         {d.cards.map((card, i) => (
+//           <div key={i} className={`card-animate card-interactive rounded-2xl lg:rounded-3xl ${card.bg} p-7 sm:p-8 lg:p-10 flex flex-col`}>
+//             <h3 className="text-2xl sm:text-3xl font-bold">{card.title}</h3>
+//             <p className="text-gray-300 mt-4 text-sm sm:text-base flex-1">{card.desc}</p>
+//             <div className="mt-8">
+//               <button
+//                 onClick={() => navigate(card.link)}
+//                 className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-medium ${card.btnClass}`}
+//               >
+//                 {card.btn}
+//               </button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ================= OPEN FOR COLLABORATION CTA ================= */
 function CollabCTA() {
@@ -217,13 +217,6 @@ function CollabCTA() {
               >
                 {d.cta.primaryBtn}
               </button>
-              <a
-                href="/cv.pdf"
-                download
-                className="px-7 py-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-colors font-medium text-sm sm:text-base text-center"
-              >
-                {d.cta.secondaryBtn}
-              </a>
             </div>
 
           </div>
@@ -240,7 +233,7 @@ export default function Home() {
       <Hero />
       <AboutSnippet />
       <BlogPreview />
-      <PromoCards />
+      {/* <PromoCards /> */}
       <CollabCTA />
     </main>
   );

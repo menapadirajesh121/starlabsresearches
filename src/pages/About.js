@@ -75,9 +75,6 @@ export default function About() {
                   {d.hero.primaryBtn}
                 </button>
 
-                <button onClick={() => navigate("/research")} className="bg-[#1d1727] border border-white/10 px-7 py-4 rounded-full">
-                  {d.hero.secondaryBtn}
-                </button>
 
               </div>
 

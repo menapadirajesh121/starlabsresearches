@@ -1,23 +1,25 @@
 {
   "hero": {
-    "badge": "PhD Candidate in Astrophysics",
-    "title": "Decoding the",
-    "highlight": "Galactic Tapestry",
-    "paragraph": "Exploring the origins of galaxy formation and dark matter through large-scale computational simulations and high-energy observations.",
-    "primaryBtn": "Explore My Research",
-    "secondaryBtn": "My Journey_sofar"
+    "badge": "Research beyond the observable",
+    "title": "Exploring the universe",
+    "highlight": "one discovery at a time",
+    "paragraph": "Unraveling the mysteries of the universe through science,computation and innovations",
+    "primaryBtn": "Explore our Researches",
+    "secondaryBtn": "Learn More"
   },
   "about": {
-    "eyebrow": "About My Work",
+    "eyebrow": "About StarLabs",
     "title": "A Passion for the Unseen Universe",
     "paragraphs": [
-      "My research focuses on the intersection of computational astrophysics and observational cosmology. Currently, I am a PhD student at Global Space University, where I investigate how dark matter halos influence the chemical enrichment of early galaxies.",
-      "Using the latest supercomputing clusters, I develop high-resolution simulations to mimic the first billion years of the universe."
+      "Star Labs Researches is an independent scientific research group dedicated to exploring the mysteries of the cosmos through computational astrophysics, cosmology, and data-driven investigation. We believe that meaningful scientific discovery is driven by curiosity, rigorous analysis, and the freedom to pursue fundamental questions about our universe.",
+      "Our research focuses on galaxy formation, exoplanets, cosmic structure, and the physical processes that have shaped the universe across billions of years. By combining advanced simulations, theoretical modeling, and observational data, we seek to contribute new perspectives to modern astrophysics and cosmological research.",
+      "Whether through independent projects, collaborative initiatives, or public scientific outreach, our mission is to advance knowledge and inspire a deeper appreciation for the universe we inhabit."
+
     ],
-    "tags": ["Galaxy Evolution", "Dark Matter", "Python", "CUDA", "Cosmology"],
+    "tags": ["Galaxy Evolution", "Stellar Astrophysics", "Python", "Exoplanets", "Cosmology"],
     "focusItems": [
-      { "icon": "FiCpu", "color": "bg-[#261938]", "iconColor": "text-[#a56fff]", "title": "Large-scale Simulations", "desc": "Running 10^7 particle simulations on the Aurora Supercomputer." },
-      { "icon": "FiGlobe", "color": "bg-[#4a1f07]", "iconColor": "text-[#ff8a4c]", "title": "Global Collaborations", "desc": "Working with international teams across 4 continents." }
+      { "icon": "FiCpu", "color": "bg-[#261938]", "iconColor": "text-[#a56fff]", "title": "Stellar Rotation & Ageing", "desc": "Investigating how stars spin, evolve, and age to better understand the history of our galaxy." },
+      { "icon": "FiGlobe", "color": "bg-[#4a1f07]", "iconColor": "text-[#ff8a4c]", "title": " Galaxy Formation and Evolution", "desc": "understanding how galaxies emerge ,grow and evolve across cosmic time" }
     ]
   },
   "posts": [
@@ -30,9 +32,8 @@
     { "title": "The Discovery", "desc": "Explore my technical portfolio, simulations, and publications.", "btn": "Explore My Research", "bg": "bg-[#8c3d10]", "btnClass": "bg-white text-black", "link": "/research" }
   ],
   "cta": {
-    "title": "Open for Collaboration",
-    "desc": "I am always eager to connect with fellow researchers, prospective supervisors, and space enthusiasts.",
-    "primaryBtn": "Get In Touch",
-    "secondaryBtn": "Download Academic CV"
+    "title": "Interested in us",
+    "desc": "We are always eager to connect with fellow researchers, prospective supervisors, and space enthusiasts.",
+    "primaryBtn": "Get In Touch"
   }
 }

@@ -25,7 +25,7 @@ export default function ResearchTeam() {
         <div className="absolute inset-0 bg-[#0f0c16]/80" />
         <div className="relative max-w-5xl mx-auto text-center px-6">
           <span className="inline-block px-4 py-2 rounded-full bg-[#342047] text-xs tracking-wider text-purple-200">
-            ASTROPHYSICS LAB
+            Meet our Team
           </span>
 
           <h1 className="text-6xl md:text-7xl font-bold mt-8 leading-tight">

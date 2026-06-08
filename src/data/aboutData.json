@@ -12,8 +12,7 @@
       "label": "Our Vision",
       "text": "To develop Star Labs Researches into a recognized independent research initiative that contributes to astronomy through high-quality research and international collaborations."
     },
-    "primaryBtn": "View Publications",
-    "secondaryBtn": "Our Projects"
+    "primaryBtn": "Browse us"
   },
   "values": {
     "title": "Core Values",
@@ -27,13 +26,13 @@
     ]
   },
   "evolution": {
-    "title": "Our Evolution",
-    "subtitle": "From a small independent initiative to a growing hub for astronomical data science and interdisciplinary research.",
-    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900",
+    "title": "Our Journey",
+    "subtitle": "Building an independent platform for scientific discovery, computational research, and astrophysical exploration.",
+    "image": "https://miro.medium.com/v2/1*o_toXt94g4HlAqnEJNkO9w.jpeg",
     "timeline": [
-      { "year": "2024", "title": "International Expansion", "description": "Secured three major international collaborations for observational data analysis." },
-      { "year": "2023", "title": "Computational Hub", "description": "Established our dedicated high-performance computing cluster for dark matter simulations." },
-      { "year": "2022", "title": "Star Labs Founded", "description": "Launched the initiative with a focus on addressing fundamental scientific questions through data." }
+      { "year": "Future", "title": "Towards Collaborative Discovery", "description": "Working toward research collaborations, publications, and open-source scientific contributions." },
+      { "year": "2026", "title": "Expanding Research Horizons", "description": "Advancing projects in stellar astrophysics, gyrochronology, dark matter, and data-driven astronomy." },
+      { "year": "2025", "title": "Building the Foundation", "description": "Established Star Labs Researches as an independent initiative dedicated to open scientific inquiry and computational research." }
     ]
   },
   "cta": {
@@ -45,15 +44,10 @@
   },
   "footer": {
     "brand": {
-      "desc": "Astrophysics research student exploring the cosmos, data by data. Pursuing the origins of the universe through computational modelling."
+      "desc": "Astrophysics research individual exploring the cosmos, data by data. Pursuing the origins of the universe through computational modelling."
     },
     "navigation": ["Home", "About", "Research", "Blog", "Contact"],
-    "resources": ["Google Scholar", "ORCID Profile", "ArXiv Preprints", "CV Download"],
-    "affiliation": {
-      "dept": "Department of Physics & Astronomy",
-      "university": "Global Space University",
-      "location": "Stardust City, SC 90210"
-    },
+    "resources": ["Google Scholar", "ORCID Profile", "Preprints"],
     "copyright": "© 2026 Star Labs Researches. Built for the stars.",
     "seo": "SEO: Astrophysics PhD candidate research portfolio"
   }
