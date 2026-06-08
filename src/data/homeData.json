@@ -18,8 +18,8 @@
     ],
     "tags": ["Galaxy Evolution", "Stellar Astrophysics", "Python", "Exoplanets", "Cosmology"],
     "focusItems": [
-      { "icon": "FiCpu", "color": "bg-[#261938]", "iconColor": "text-[#a56fff]", "title": "Stellar Rotation & Ageing", "desc": "Investigating how stars spin, evolve, and age to better understand the history of our galaxy." },
-      { "icon": "FiGlobe", "color": "bg-[#4a1f07]", "iconColor": "text-[#ff8a4c]", "title": " Galaxy Formation and Evolution", "desc": "understanding how galaxies emerge ,grow and evolve across cosmic time" }
+      { "icon": "FiStar", "color": "bg-[#261938]", "iconColor": "text-[#a56fff]", "title": "Stellar Rotation & Ageing", "desc": "Investigating how stars spin, evolve, and age to better understand the history of our galaxy." },
+      { "icon": "FiDisc", "color": "bg-[#4a1f07]", "iconColor": "text-[#ff8a4c]", "title": "Galaxy Formation and Evolution", "desc": "Understanding how galaxies emerge, grow and evolve across cosmic time." }
     ]
   },
   "posts": [

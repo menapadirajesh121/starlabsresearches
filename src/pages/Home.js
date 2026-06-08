@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCardAnimation from "../hooks/useCardAnimation";
-import { FiCpu, FiGlobe, FiArrowRight } from "react-icons/fi";
+import { FiCpu, FiGlobe, FiArrowRight, FiStar, FiDisc } from "react-icons/fi";
 import d from "../data/homeData.json";
 
 
-const iconMap = { FiCpu, FiGlobe };
+const iconMap = { FiCpu, FiGlobe, FiStar, FiDisc };
 
 /* ================= HERO ================= */
 function Hero() {
@@ -100,8 +100,8 @@ function AboutSnippet() {
               const Icon = iconMap[item.icon] || FiCpu;
               return (
                 <div key={i} className="border-t border-white/5 p-6 sm:p-8">
-                  <div className="flex gap-4 items-start">
-                    <div className={`w-11 h-11 rounded-full ${item.color} flex items-center justify-center flex-shrink-0`}>
+                  <div className="flex gap-3 items-start">
+                    <div className={`w-11 h-11 rounded-full ${item.color} flex py-2 justify-center flex-shrink-0`}>
                       <Icon size={18} className={item.iconColor} />
                     </div>
                     <div>

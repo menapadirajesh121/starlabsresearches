@@ -7,14 +7,14 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-[#16111d] border-t border-white/5 py-16">
+    <footer className="bg-[#16111d] border-t border-white/5 py-8">
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 items-start">
 
         {/* BRAND */}
         <div className="sm:col-span-2 lg:col-span-1">
           <img src={logo} alt="StarLabs" className="w-36" style={{ height: "auto" }} />
-          <p className="text-gray-400 mt-5 text-sm leading-7">
+          <p className="text-gray-400 text-sm leading-7">
             {d.footer.brand.desc}
           </p>
           <div className="flex gap-4 mt-5 text-lg text-gray-400">

@@ -18,8 +18,8 @@
     "resetBtn": "Send Another"
   },
   "infoCards": [
-    { "icon": "FiAward", "title": "Open to Supervisors", "desc": "Currently exploring PhD positions starting Fall 2025." },
-    { "icon": "FiClock", "title": "Quick Responses", "desc": "Typical response time for academic inquiries is 1-2 days." }
+    { "icon": "FiAward", "title": "Open to Supervisors", "desc": "" },
+    { "icon": "FiClock", "title": "Quick Responses", "desc": "Typical response time is 24 hours" }
   ],
   "footprint": {
     "label": "Academic Footprint",
