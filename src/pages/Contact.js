@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  FiMail, FiMapPin, FiSend, FiDownload,
+  FiMail, FiMapPin, FiSend,
   FiBook, FiGithub, FiLinkedin, FiClock, FiAward,
 } from "react-icons/fi";
 import d from "../data/contactData.json";
@@ -13,7 +13,7 @@ function Hero() {
   return (
     <section className="relative py-14 sm:py-20 md:py-24 overflow-hidden">
       <img
-        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&auto=format&fit=crop&q=80"
+        src="https://i.pinimg.com/1200x/c8/3b/99/c83b998ebb38bb33a1d2a634814be171.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         aria-hidden="true"
@@ -233,22 +233,7 @@ function ContactSidebar() {
         </div>
       </div>
 
-      {/* CV card */}
-      <div className="bg-purple-300 rounded-2xl p-5 text-black">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <h3 className="font-bold text-lg sm:text-xl">{d.cv.title}</h3>
-            <p className="text-xs mt-1 text-black/70">{d.cv.updated}</p>
-          </div>
-          <a
-            href="/cv.pdf"
-            download
-            className="bg-[#17131f] text-white px-4 py-2.5 rounded-xl flex items-center gap-1.5 text-xs sm:text-sm shrink-0 hover:bg-[#251e35] transition-colors"
-          >
-            <FiDownload size={14} /> {d.cv.btn}
-          </a>
-        </div>
-      </div>
+     
 
     </div>
   );

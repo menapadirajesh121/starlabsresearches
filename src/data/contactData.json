@@ -4,7 +4,7 @@
     "title": "Let's Explore the",
     "highlight": "Universe",
     "suffix": "Together",
-    "paragraph": "Whether you're a prospective PhD supervisor, a collaborator, or a fellow enthusiast, I'd love to hear from you."
+    "paragraph": "Whether you're a prospective PhD supervisor, a collaborator, or a fellow enthusiast, We'd love to hear from you."
   },
   "form": {
     "title": "Collaborate or Supervise",
@@ -32,9 +32,9 @@
   },
   "station": {
     "title": "Current Station",
-    "lines": ["Global Space University", "Department of Astrophysics", "Laboratory for Computational Cosmos", "Desk 42-B", "Stardust City, SC 90210"],
+    "lines": ["Star Labs Researches", "An independent research group", "Bangalore", "Karnataka", "India"],
     "emailLabel": "Official Outreach",
-    "email": "a.stardust@space-uni.edu"
+    "email": "researches@starlabsresearches.com"
   },
   "cv": {
     "title": "Curriculum Vitae",
