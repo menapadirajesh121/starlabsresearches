@@ -1,110 +1,154 @@
 [
   {
-    "id": "elena-vance",
-    "name": "Dr. Elena Vance",
-    "role": "FOUNDER & LEAD PRINCIPAL",
-    "badge": "PhD Candidate • Year 4",
-    "desc": "Pioneering the future of gravitational wave synthesis",
+    "id": "sournamalya-grace-bhavani",
+    "name": "Dr. Sournamalya 'Grace' Bhavani",
+    "role": "Founder & Lead Researcher",
+    "badge": "Founder & Lead Researcher",
+    "desc": "Every great discovery begins as a crazy idea.",
     "title": "Computational Astrophysicist & Data Science Fellow",
     "bio": [
-      "My fascination with the cosmos began under the dark skies of rural Montana, where I first observed the Andromeda galaxy through a second-hand telescope.",
-      "During my undergraduate years at MIT, I transitioned from observational astronomy into the rapidly growing field of computational astrophysics.",
-      "My current doctoral research focuses on the dark web of the universe and how dark matter structures influence galaxy evolution across cosmic time."
+      "My academic journey began in Electronics and Communication Engineering, where I developed a strong foundation in analytical thinking, problem-solving, and technology. However, during the final stages of my undergraduate studies, I realized that my deepest curiosity lay elsewhere — in understanding the universe and the physical laws that govern it.",
+      "This realization motivated me to pursue a new path. To build the theoretical foundation necessary for a career in astrophysics, I enrolled in a Master's degree in Physics while simultaneously studying astronomy, scientific programming, and data analysis independently.",
+      "Since then, I have been actively involved in research projects spanning exoplanets, stellar variability, machine learning, and Bayesian statistical methods. These experiences have strengthened my passion for astronomy and reinforced my goal of contributing to astrophysical research through observational data analysis and computational techniques.",
+      "Today, I continue to explore the universe through research, collaboration, and lifelong learning, with the long-term goal of bringing the world of Astronomy to everyone."
     ],
     "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
-    "email": "evance@astro.edu",
-    "twitter": "@astro_elena",
-    "github": "lab/vance-sims",
-    "focus": ["Dark Matter", "Gravitational Lensing", "N-Body Simulations", "Machine Learning", "Cosmic Web", "Galactic Evolution"],
+    "email": "research@starlabsresearches.com",
+    "twitter": "@grace_bhavani",
+    "github": "spaceyg-blip",
+    "linkedin": "www.linkedin.com/in/grace-bhavani",
+    "focus": ["Stellar Astrophysics", "Variable Stars", "Time-Domain Astronomy", "Exoplanet Science", "Bayesian Statistics", "Machine Learning", "Explainable AI", "Astronomical Data Analysis"],
     "engagements": [
-      { "org": "LSST Consortium", "role": "Active Working Group Member" },
-      { "org": "Women in Physics", "role": "Peer Mentor & Organizer" }
+      { "org": "Star Labs Researches", "role": "Founder & Lead Researcher" },
+      { "org": "Master of Science in Physics", "role": "Graduate Student" },
+      { "org": "Independent Astronomy Research", "role": "Stellar Astrophysics, Exoplanets & Data-Driven Astronomy" }
     ],
     "publications": [
-      { "title": "Mapping Dark Matter Filaments via Weak Gravitational Lensing in the COSMOS Field", "journal": "Astrophysical Journal Letters", "year": "2023", "abstract": "This study presents a high-resolution map of dark matter distribution using advanced weak lensing techniques. We identified three previously uncatalogued filaments connecting massive galaxy clusters, providing new constraints on the Warm Dark Matter model and large-scale structure evolution." },
-      { "title": "N-Body Simulations of Galactic Mergers: The Role of Supermassive Black Hole Feedback", "journal": "Monthly Notices of the Royal Astronomical Society", "year": "2022" },
-      { "title": "Automated Transient Detection in Large Synoptic Surveys using Deep Residual Networks", "journal": "Nature Astronomy", "year": "2024" }
+      {
+        "title": "A Unified Bayesian Study of Exoplanet Populations: From Survey Biases to Circumbinary Systems in Kepler and TESS",
+        "journal": "International Journal of Engineering Research & Technology (IJERT)",
+        "year": "2026",
+        "type": "Journal Publication",
+        "authors": "Bhavani, S., Sree, D. A., & Premjit, A.",
+        "contribution": "Data acquisition, preprocessing, Bayesian modeling, posterior predictive checks, WAIC and model comparison.",
+        "abstract": "A comprehensive Bayesian investigation of exoplanet populations observed by the Kepler and TESS missions. Using hierarchical Bayesian models and statistical inference techniques, the study examined how stellar properties and observational biases influence planetary occurrence and multiplicity across diverse planetary systems."
+      },
+      {
+        "title": "Statistical Approaches to Exoplanet Detection and Characterization Using Photometric Time-Series Data",
+        "journal": "Frontiers of Cosmology, Astrophysics and Particle Physics (FroCAP2025)",
+        "year": "2025",
+        "type": "Conference Presentation",
+        "authors": "Bhavani, S.",
+        "contribution": "Explored statistical methods for detecting and characterizing exoplanet signals in photometric datasets, with a focus on time-series analysis and observational uncertainties.",
+        "abstract": "Explored statistical methodologies for identifying and characterizing exoplanet signatures within photometric datasets. The work focused on time-series analysis, observational uncertainties, and the application of statistical tools to exoplanet detection and characterization."
+      }
     ]
   },
   {
-    "id": "marcus-thorne",
-    "name": "Marcus Thorne",
-    "role": "SENIOR RESEARCHER",
-    "badge": "Senior Researcher • 8 Years",
-    "desc": "Mapping the dark matter filaments of the local cluster",
-    "title": "Observational Astronomer & Cosmologist",
+    "id": "deepika-sree",
+    "name": "Deepika Sree",
+    "role": "Operations & Research Lead",
+    "badge": "Operations & Research Lead",
+    "desc": "Science advances when ideas are shared and explored together.",
+    "title": "Physics & Machine Learning Researcher",
     "bio": [
-      "Marcus began his journey at the European Southern Observatory, where he spent three years collecting deep-field imaging data from the VLT.",
-      "His expertise lies in cross-correlating multi-wavelength datasets to trace the large-scale structure of the nearby universe.",
-      "He currently leads the local cluster mapping initiative, coordinating with international teams to publish the most detailed filament map to date."
-    ],
-    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600",
-    "email": "mthorne@astro.edu",
-    "twitter": "@thorne_cosmos",
-    "github": "lab/thorne-cluster",
-    "focus": ["Dark Matter Filaments", "Multi-wavelength Surveys", "Large-Scale Structure", "VLT Imaging", "Cosmological Simulations"],
-    "engagements": [
-      { "org": "ESO Collaboration", "role": "Associate Observer" },
-      { "org": "Euclid Mission", "role": "Data Analysis Contributor" }
-    ],
-    "publications": [
-      { "title": "Dark Matter Filament Mapping in the Virgo Supercluster", "journal": "Astronomy & Astrophysics", "year": "2023", "abstract": "Using a combination of weak lensing and X-ray observations, we present the first complete filamentary map of the Virgo Supercluster, revealing six major dark matter bridges between member clusters." },
-      { "title": "Cross-Correlation of CMB Lensing and Galaxy Density Fields", "journal": "Astrophysical Journal", "year": "2021" },
-      { "title": "Multi-wavelength Analysis of Cluster Infall Regions", "journal": "Monthly Notices of the Royal Astronomical Society", "year": "2022" }
-    ]
-  },
-  {
-    "id": "sarah-jenkins",
-    "name": "Sarah Jenkins",
-    "role": "DATA SCIENTIST",
-    "badge": "Data Scientist • ML Specialist",
-    "desc": "Transforming petabytes of telescope noise into signals",
-    "title": "Astrophysical Data Scientist & ML Engineer",
-    "bio": [
-      "Sarah transitioned from a software engineering background into astrophysics data science, bringing industry-level MLOps practices to the lab.",
-      "She built the lab's core signal-processing pipeline that processes over 4TB of raw telescope data nightly.",
-      "Her deep learning models have improved transient detection accuracy by 40%, directly enabling several new pulsar discoveries."
+      "I am a physicist and machine learning researcher with interests at the intersection of physics, machine learning, and scientific computing. My work focuses on developing data-driven and physics-based approaches to solving complex real-world problems by combining tools from machine learning, numerical modeling, and computational physics.",
+      "At Star Labs Researches, I contribute to research initiatives that combine physics, astronomy, and computational methods. I am particularly interested in how machine learning and scientific computing can be used to better understand complex systems and address challenging scientific questions.",
+      "As part of the Star Labs team, I support collaborative research projects, scientific discussions, and the development of new ideas that bring together curiosity, computation, and discovery."
     ],
     "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600",
-    "email": "sjenkins@astro.edu",
-    "twitter": "@sarah_astroml",
-    "github": "lab/jenkins-pipeline",
-    "focus": ["Deep Learning", "Signal Processing", "Transient Detection", "Data Pipelines", "Python / PyTorch", "Radio Astronomy"],
+    "email": "researches@starlabsresearches.com",
+    "twitter": "@deepika_sree",
+    "github": "deepika-sree",
+    "linkedin": "linkedin.com/in/deepika-sree",
+    "focus": ["Machine Learning", "Scientific Computing", "Computational Physics", "Computational Astrophysics", "Bayesian Methods", "Data Analysis"],
     "engagements": [
-      { "org": "SKA Observatory", "role": "Pipeline Engineer" },
-      { "org": "AstroML Working Group", "role": "Core Contributor" }
+      { "org": "Star Labs Researches", "role": "Operations & Research Lead" },
+      { "org": "Physics & Machine Learning Research", "role": "Computational and Data-Driven Approaches" },
+      { "org": "Computational Astrophysics", "role": "Research and Collaborative Projects" }
     ],
     "publications": [
-      { "title": "Automated Transient Detection in Large Synoptic Surveys using Deep Residual Networks", "journal": "Nature Astronomy", "year": "2024", "abstract": "We present a deep residual network architecture trained on 200 million labelled light curves that achieves state-of-the-art transient detection, reducing false-positive rates by 62% compared to classical matched-filter approaches." },
-      { "title": "Real-Time Radio Frequency Interference Mitigation using Convolutional Autoencoders", "journal": "Publications of the Astronomical Society of the Pacific", "year": "2023" },
-      { "title": "Scalable ML Pipelines for Next-Generation Radio Telescope Arrays", "journal": "Journal of Astronomical Telescopes and Instruments", "year": "2022" }
+      {
+        "title": "A Unified Bayesian Study of Exoplanet Populations: From Survey Biases to Circumbinary Systems in Kepler and TESS",
+        "journal": "International Journal of Engineering Research & Technology (IJERT)",
+        "year": "2026",
+        "type": "Journal Publication",
+        "contribution": "Contributed to the Bayesian modeling, statistical analysis, and computational aspects of the research projects, with particular interests in machine learning, scientific computing, and astrophysical data analysis.",
+        "abstract": "A comprehensive Bayesian investigation of exoplanet populations observed by the Kepler and TESS missions. Using hierarchical Bayesian models and statistical inference techniques, the study examined how stellar properties and observational biases influence planetary occurrence and multiplicity across diverse planetary systems."
+      },
+      {
+        "title": "Statistical Approaches to Exoplanet Detection and Characterization Using Photometric Time-Series Data",
+        "journal": "Frontiers of Cosmology, Astrophysics and Particle Physics (FroCAP2025)",
+        "year": "2025",
+        "type": "Conference Presentation",
+        "abstract": "Explored statistical methodologies for identifying and characterizing exoplanet signatures within photometric datasets. The work focused on time-series analysis, observational uncertainties, and the application of statistical tools to exoplanet detection and characterization."
+      }
     ]
   },
   {
-    "id": "leo-chen",
-    "name": "Leo Chen",
-    "role": "LAB MANAGER",
-    "badge": "Lab Manager • Infrastructure Lead",
-    "desc": "Coordinating orbital simulation infrastructure",
-    "title": "HPC Infrastructure Engineer & Simulation Architect",
+    "id": "adiya-premjit",
+    "name": "Adiya Premjit",
+    "role": "Research Associate",
+    "badge": "Research Associate",
+    "desc": "The universe is full of mysteries, and every discovery begins with curiosity.",
+    "title": "Astrophysics Researcher & Graduate Student",
     "bio": [
-      "Leo oversees the lab's high-performance computing cluster, managing over 2000 CPU cores and 60 GPUs dedicated to astrophysical simulations.",
-      "He designed the containerised workflow system that reduced simulation setup time from days to minutes for every researcher in the lab.",
-      "His background in aerospace engineering gives him a unique perspective on orbital mechanics, which he applies to satellite-based observation scheduling."
+      "My interest in astronomy stems from a curiosity about the universe and the physical processes that shape it. As a Master's student in Physics, I am exploring different areas of astrophysics while building a strong foundation in theoretical concepts, scientific research, and data analysis.",
+      "Through Star Labs Researches, I have had the opportunity to engage with astronomy research, collaborate with fellow researchers, and gain exposure to modern computational approaches used in astrophysics. These experiences continue to strengthen my interest in understanding the cosmos and contributing to future research efforts.",
+      "I am particularly interested in learning how observational data can be used to investigate astronomical phenomena and how computational techniques can help uncover patterns hidden within large scientific datasets."
     ],
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
-    "email": "lchen@astro.edu",
-    "twitter": "@leo_hpc_astro",
-    "github": "lab/chen-infra",
-    "focus": ["HPC Clusters", "Orbital Mechanics", "Docker / Kubernetes", "MPI Parallelism", "Simulation Pipelines", "DevOps"],
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
+    "email": "researches@starlabsresearches.com",
+    "twitter": "@adiya_premjit",
+    "github": "adiya-premjit",
+    "linkedin": "linkedin.com/in/adiya-premjit",
+    "focus": ["Astronomy", "Astrophysics", "Stellar Physics", "Observational Astronomy", "Data Analysis", "Scientific Research"],
     "engagements": [
-      { "org": "NASA Ames HPC Division", "role": "Visiting Engineer" },
-      { "org": "Open Astrophysics Catalog", "role": "Infrastructure Maintainer" }
+      { "org": "Master's in Physics", "role": "Graduate Student" },
+      { "org": "Star Labs Researches", "role": "Research Associate" },
+      { "org": "Astronomy Research", "role": "Learning & Collaborative Projects" }
     ],
     "publications": [
-      { "title": "Containerised HPC Workflows for Large-Scale N-Body Simulations", "journal": "Journal of Computational Science", "year": "2023", "abstract": "We describe a fully containerised orchestration framework for running N-body simulations across heterogeneous HPC clusters, achieving near-linear scaling up to 4096 cores with minimal overhead." },
-      { "title": "GPU-Accelerated Orbit Propagation for Debris Field Modelling", "journal": "Acta Astronautica", "year": "2022" },
-      { "title": "Automated Resource Scheduling for Astrophysical Survey Pipelines", "journal": "Astronomy and Computing", "year": "2021" }
+      {
+        "title": "A Unified Bayesian Study of Exoplanet Populations: From Survey Biases to Circumbinary Systems in Kepler and TESS",
+        "journal": "International Journal of Engineering Research & Technology (IJERT)",
+        "year": "2026",
+        "type": "Journal Publication",
+        "contribution": "Contributed to research activities involving astrophysics, data analysis, and collaborative scientific investigation while developing expertise in astronomy and observational science.",
+        "abstract": "A comprehensive Bayesian investigation of exoplanet populations observed by the Kepler and TESS missions. Using hierarchical Bayesian models and statistical inference techniques, the study examined how stellar properties and observational biases influence planetary occurrence and multiplicity across diverse planetary systems."
+      },
+      {
+        "title": "Statistical Approaches to Exoplanet Detection and Characterization Using Photometric Time-Series Data",
+        "journal": "Frontiers of Cosmology, Astrophysics and Particle Physics (FroCAP2025)",
+        "year": "2025",
+        "type": "Conference Presentation",
+        "abstract": "Explored statistical methodologies for identifying and characterizing exoplanet signatures within photometric datasets. The work focused on time-series analysis, observational uncertainties, and the application of statistical tools to exoplanet detection and characterization."
+      }
     ]
+  },
+  {
+    "id": "rajesh",
+    "name": "Rajesh M R",
+    "role": "Digital Media Head",
+    "badge": "Digital Media Head",
+    "desc": "Building bridges between science and people through digital storytelling.",
+    "title": "Digital Media & Science Communication Lead",
+    "bio": [
+      "Rajesh leads the digital media and science communication efforts at Star Labs Researches, ensuring that complex astrophysical research is presented in an engaging and accessible way to the public.",
+      "His work bridges the gap between scientific discovery and public understanding, using storytelling, design, and digital platforms to bring the universe closer to everyone.",
+      "He collaborates closely with the research team to translate cutting-edge findings into compelling content that inspires curiosity and drives engagement across communities."
+    ],
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    "email": "researches@starlabsresearches.com",
+    "twitter": "@rajesh_mr",
+    "github": "rajesh-mr",
+    "linkedin": "linkedin.com/in/rajesh-mr",
+    "focus": ["Science Communication", "Digital Media", "Content Strategy", "Visual Storytelling", "Social Media", "Science Outreach"],
+    "engagements": [
+      { "org": "Star Labs Researches", "role": "Digital Media Head" },
+      { "org": "Science Communication", "role": "Public Outreach & Digital Storytelling" },
+      { "org": "Media & Design", "role": "Visual Content & Strategy" }
+    ],
+    "publications": []
   }
 ]

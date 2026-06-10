@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "badge": "Meet our Team",
+    "bgImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1800",
+    "titleStart": "Deciphering the",
+    "titleHighlight": "Cosmic Symphony",
+    "paragraph": "We are a dedicated collective of researchers and students pushing the boundaries of astrophysics.",
+    "stats": [
+      { "emoji": "⭐", "label": "Stellar Astrophysics" },
+      { "emoji": "🪐", "label": "Exoplanet Science" },
+      { "emoji": "📊", "label": "Computational Astronomy" }
+    ]
+  },
+  "section": {
+    "title": "Meet Our Team",
+    "subtitle": "The people behind Star Labs Researches  students, researchers, and curious minds united by a passion for astronomy and discovery."
+  },
+  "cta": {
+    "title": "Looking to collaborate?",
+    "desc": "We are always open to academic partnerships, guest lectures, and collaborative PhD research projects.",
+    "btn": "Contact Our Lab",
+    "link": "/contact"
+  }
+}

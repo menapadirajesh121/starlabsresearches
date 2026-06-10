@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FiYoutube, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 import logo from "../images/starlabs_logo.png";
 import d from "../data/aboutData.json";
 
@@ -18,9 +18,8 @@ export default function Footer() {
             {d.footer.brand.desc}
           </p>
           <div className="flex gap-4 mt-5 text-lg text-gray-400">
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiYoutube /></a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiGithub /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiLinkedin /></a>
+            <a href=" https://github.com/spaceyg-blip" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiGithub /></a>
+            <a href="www.linkedin.com/in/grace-bhavani" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiLinkedin /></a>
           </div>
         </div>
 

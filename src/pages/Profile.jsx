@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import {
-  FiMail, FiGithub, FiLinkedin, FiTwitter,
+  FiMail, FiGithub, FiLinkedin,
   FiDownload, FiFileText, FiStar, FiArrowRight, FiBriefcase,
 } from "react-icons/fi";
-import researchers from "../data/researchersData";
+import researchers from "../data/researchersData.json";
 
 export default function Profile() {
   const { id } = useParams();
@@ -53,9 +53,10 @@ export default function Profile() {
                 <a href={`mailto:${person.email}`} className="bg-[#1d1727] border border-white/10 px-6 py-4 rounded-xl flex items-center gap-3">
                   <FiMail /> Reach Out
                 </a>
-                <a href={`https://github.com/${person.github}`} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center"><FiGithub /></a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center"><FiLinkedin /></a>
-                <a href={`https://twitter.com/${person.twitter}`} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center"><FiTwitter /></a>
+                <a href={`https://github.com/${person.github}`} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-white/30 transition"><FiGithub /></a>
+                {person.linkedin && (
+                  <a href={`https://${person.linkedin}`} target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-white/30 transition"><FiLinkedin /></a>
+                )}
               </div>
             </div>
 
@@ -85,42 +86,37 @@ export default function Profile() {
             </div>
 
             <div className="mt-8 bg-[#17131f] border border-white/5 rounded-3xl overflow-hidden">
-              {person.publications.map((pub, index) => (
+              {person.publications.length > 0 ? person.publications.map((pub, index) => (
                 <div key={index} className={`p-8 ${index !== person.publications.length - 1 ? "border-b border-white/5" : ""}`}>
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                     <div>
+                      {pub.type && <span className="text-xs uppercase tracking-widest text-[#b58be8] mb-2 block">{pub.type}</span>}
                       <h3 className="text-2xl font-bold leading-tight">{pub.title}</h3>
-                      <div className="flex flex-wrap gap-4 mt-4 text-sm text-gray-400">
+                      {pub.authors && <p className="text-sm text-gray-400 mt-2">{pub.authors}</p>}
+                      <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-400">
                         <span>{pub.journal}</span><span>•</span><span>{pub.year}</span>
                       </div>
+                      {pub.contribution && (
+                        <p className="text-sm text-gray-300 mt-4 leading-6"><span className="text-[#b58be8] font-medium">Contribution: </span>{pub.contribution}</p>
+                      )}
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 shrink-0">
                       <button onClick={() => navigator.clipboard?.writeText(`@article{${pub.title}}`)} className="px-4 py-2 rounded-lg bg-[#211a2d] border border-white/5">BibTeX</button>
                       <a href="/preprint.pdf" download className="px-4 py-2 rounded-lg bg-[#211a2d] border border-white/5 flex items-center gap-2">
                         <FiDownload /> PDF
                       </a>
                     </div>
                   </div>
-
-                  {index === 0 && pub.abstract && (
+                  {pub.abstract && (
                     <div className="mt-8 bg-[#23202e] rounded-2xl p-6">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <p className="text-xs uppercase tracking-wider text-[#b58be8]">Abstract</p>
-                          <p className="text-gray-300 italic mt-4 leading-8">"{pub.abstract}"</p>
-                        </div>
-                        <span className="text-6xl text-gray-600">"</span>
-                      </div>
+                      <p className="text-xs uppercase tracking-wider text-[#b58be8]">Abstract</p>
+                      <p className="text-gray-300 italic mt-4 leading-8">"{pub.abstract}"</p>
                     </div>
                   )}
-
-                  {pub.abstract && (
-                    <button onClick={() => document.getElementById(`abstract-${index}`)?.scrollIntoView({ behavior: "smooth" })} className="mt-6 text-[#b58be8] text-sm flex items-center gap-2">
-                      View Abstract <FiArrowRight size={14} />
-                    </button>
-                  )}
                 </div>
-              ))}
+              )) : (
+                <div className="p-8 text-gray-400 text-center">No publications yet.</div>
+              )}
             </div>
           </div>
 
@@ -156,9 +152,15 @@ export default function Profile() {
               <h3 className="text-2xl font-bold">Connect Directly</h3>
               <p className="text-gray-300 mt-4 leading-7">Open for research collaborations, dataset sharing, or guest lectures.</p>
               <div className="space-y-4 mt-8">
-                <div className="flex items-center gap-3"><FiMail /><span>{person.email}</span></div>
-                <div className="flex items-center gap-3"><FiTwitter /><span>{person.twitter}</span></div>
-                <div className="flex items-center gap-3"><FiGithub /><span>{person.github}</span></div>
+                <div className="flex items-center gap-3"><FiMail /><span className="text-sm">{person.email}</span></div>
+                <a href={`https://github.com/${person.github}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <FiGithub /><span className="text-sm">github.com/{person.github}</span>
+                </a>
+                {person.linkedin && (
+                  <a href={`https://${person.linkedin}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-white transition-colors">
+                    <FiLinkedin /><span className="text-sm">{person.linkedin}</span>
+                  </a>
+                )}
               </div>
             </div>
 
