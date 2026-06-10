@@ -7,25 +7,23 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-[#16111d] border-t border-white/5 py-8">
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 items-start">
-
+    <footer className="bg-[#16111d] border-t border-white/5 py-12 sm:py-14 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start">
         {/* BRAND */}
-        <div className="sm:col-span-2 lg:col-span-1">
-          <img src={logo} alt="StarLabs" className="w-36" style={{ height: "auto" }} />
+        <div className="sm:col-span-2 lg:col-span-1 space-y-4">
+          <img src={logo} alt="StarLabs" className="w-32" style={{ height: "auto" }} />
           <p className="text-gray-400 text-sm leading-7">
             {d.footer.brand.desc}
           </p>
-          <div className="flex gap-4 mt-5 text-lg text-gray-400">
+          <div className="flex gap-4 text-lg text-gray-400">
             <a href=" https://github.com/spaceyg-blip" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiGithub /></a>
             <a href="www.linkedin.com/in/grace-bhavani" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><FiLinkedin /></a>
           </div>
         </div>
 
         {/* NAVIGATION */}
-        <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">Navigation</h4>
+        <div className="space-y-4">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest">Navigation</h4>
           <div className="space-y-3 text-gray-400 text-sm">
             {d.footer.navigation.map((item) => (
               <p
@@ -40,8 +38,8 @@ export default function Footer() {
         </div>
 
         {/* RESOURCES */}
-        <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">Resources</h4>
+        <div className="space-y-4">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest">Resources</h4>
           <div className="space-y-3 text-gray-400 text-sm">
             {d.footer.resources.map((item) => (
               <button key={item} className="block hover:text-white transition-colors">{item}</button>
@@ -50,8 +48,8 @@ export default function Footer() {
         </div>
 
         {/* NEWSLETTER */}
-        <div>
-          <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-5">Stay Updated</h4>
+        <div className="space-y-4">
+          <h4 className="text-white font-semibold text-sm uppercase tracking-widest">Stay Updated</h4>
           <p className="text-gray-400 text-sm mb-4 leading-6">Get the latest research and discoveries from Star Labs.</p>
           <div className="flex flex-col gap-3">
             <input
@@ -67,7 +65,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center gap-2 text-sm text-gray-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center gap-2 text-sm text-gray-500">
         <p>{d.footer.copyright}</p>
       </div>
 

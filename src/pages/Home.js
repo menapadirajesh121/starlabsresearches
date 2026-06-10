@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useCardAnimation from "../hooks/useCardAnimation";
 import { FiCpu, FiGlobe, FiArrowRight, FiStar, FiDisc } from "react-icons/fi";
 import d from "../data/homeData.json";
+import starlabsLogo from "../images/starlabs_logo.png";
 
 
 const iconMap = { FiCpu, FiGlobe, FiStar, FiDisc };
@@ -62,9 +63,9 @@ function Hero() {
 /* ================= ABOUT SNIPPET ================= */
 function AboutSnippet() {
   return (
-    <section className="bg-[#0f0c16] py-14 sm:py-16 md:py-20 lg:py-24">
+    <section className="bg-[#0f0c16] py-16 sm:py-20 md:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT */}
           <div>
@@ -90,11 +91,9 @@ function AboutSnippet() {
 
           {/* RIGHT — Current Focus card */}
           <div className="bg-[#1a1423] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/5">
-            <div className="p-6 sm:p-8">
-              <div className="rounded-xl flex items-start justify-start h-auto">
-                <img src="/faviion_logo.png" alt="favicon" style={{width:"17%"}} />
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold mt-6 text-white">Current Focus</h3>
+            <div className="p-6 sm:p-8 pb-0">
+              <img src={starlabsLogo} alt="StarLabs" className="w-2/5" />
+              <h3 className="text-2xl sm:text-3xl font-bold mt-5 text-white">Current Focus</h3>
             </div>
             {d.about.focusItems.map((item, i) => {
               const Icon = iconMap[item.icon] || FiCpu;
@@ -127,7 +126,7 @@ function BlogPreview() {
   const posts = d.posts.filter(p => p.slug);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-18 lg:py-20">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28">
       <div className="flex items-end justify-between mb-10 sm:mb-12">
         <div>
           <p className="text-purple-300 uppercase tracking-widest text-xs sm:text-sm font-semibold mb-2">Blog</p>
@@ -188,7 +187,7 @@ function BlogPreview() {
 function CollabCTA() {
   const navigate = useNavigate();
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24 lg:pb-28">
       <div className="relative rounded-2xl lg:rounded-[40px] bg-gradient-to-br from-[#2b1343] via-[#261040] to-[#1a0d2e] overflow-hidden">
         {/* decorative blobs */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px] pointer-events-none" />

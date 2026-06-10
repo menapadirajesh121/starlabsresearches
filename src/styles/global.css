@@ -162,6 +162,13 @@ body {
   border-bottom: none;
 }
 
+/* ── Page loader progress bar ───────────────────────── */
+@keyframes loading {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
 /* ── Card animation system ───────────────────────────── */
 
 @keyframes cardFadeUp {

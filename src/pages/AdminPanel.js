@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { FiEdit2, FiTrash2, FiPlus, FiX, FiLogOut, FiRefreshCw, FiBookOpen, FiFileText } from "react-icons/fi";
+import { FiEdit2, FiTrash2, FiPlus, FiX, FiLogOut, FiRefreshCw, FiBookOpen, FiFileText, FiEye } from "react-icons/fi";
 import { API } from "../utils/api";
 const ALLOWED_IMAGE_HOSTS = ["images.unsplash.com", "upload.wikimedia.org", "i.imgur.com"];
 
@@ -15,7 +15,6 @@ const inp  = "w-full bg-[#0e0a15] border border-white/10 rounded-xl px-4 py-2.5 
 const btnP = "bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 const btnG = "bg-white/10 hover:bg-white/15 text-white font-medium py-2.5 px-5 rounded-xl text-sm transition-colors";
 
-const BLOG_CATS     = ["Research Logs", "Academic Life", "Tutorials", "SpaceNews"];
 const RESEARCH_TYPES = ["Preprint", "Journal Article", "Conference Paper", "Working Paper"];
 
 const hdr = (token) => ({ "Content-Type": "application/json", Authorization: `Bearer ${token}` });
@@ -102,7 +101,7 @@ function SeedBanner({ token, onDone }) {
 }
 
 /* ─── Blog Form Modal ────────────────────────────────── */
-const emptyBlog = { slug: "", title: "", category: "Research Logs", excerpt: "", content: "", image: "", tags: "", readTime: "5 min read", date: "" };
+const emptyBlog = { slug: "", title: "", category: "", excerpt: "", content: "", image: "", tags: "", readTime: "5 min read", date: "" };
 
 function BlogForm({ token, editData, onClose, onSaved }) {
   const [form, setForm] = useState(() =>
@@ -139,9 +138,7 @@ function BlogForm({ token, editData, onClose, onSaved }) {
           <input className={inp} placeholder="Post title" value={form.title} onChange={fld("title")} required />
         </Field>
         <Field label="Category *">
-          <select className={inp} value={form.category} onChange={fld("category")}>
-            {BLOG_CATS.map(c => <option key={c}>{c}</option>)}
-          </select>
+          <input className={inp} placeholder="e.g. Research Logs" value={form.category} onChange={fld("category")} required />
         </Field>
         <Field label="Read Time">
           <input className={inp} placeholder="8 min read" value={form.readTime} onChange={fld("readTime")} />
@@ -246,7 +243,7 @@ function BlogPanel({ token, onCountChange }) {
     try {
       const r = await fetch(`${API}/blogs?limit=200`);
       const d = await r.json();
-      const list = d.posts || [];
+      const list = (d.posts || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setPosts(list);
       onCountChange(list.length);
     } catch {}
@@ -303,6 +300,7 @@ function BlogPanel({ token, onCountChange }) {
               <p className="text-xs text-gray-500 mt-0.5 truncate">{p.excerpt}</p>
             </div>
             <div className="flex gap-1.5 shrink-0">
+              <a href={`https://starlabsresearches.com/blog/${p.slug}`} target="_blank" rel="noreferrer" className="p-2 rounded-xl border border-white/10 hover:border-green-400 text-gray-400 hover:text-green-300 transition-colors"><FiEye size={13}/></a>
               <button onClick={() => setForm(p)} className="p-2 rounded-xl border border-white/10 hover:border-purple-400 text-gray-400 hover:text-purple-300 transition-colors"><FiEdit2 size={13}/></button>
               <button onClick={() => del(p)} disabled={delId === p._id} className="p-2 rounded-xl border border-red-500/20 text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-40"><FiTrash2 size={13}/></button>
             </div>
@@ -323,7 +321,7 @@ function ResearchPanel({ token, onCountChange }) {
     try {
       const r = await fetch(`${API}/research`);
       const d = await r.json();
-      const list = Array.isArray(d) ? d : [];
+      const list = (Array.isArray(d) ? d : []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setItems(list);
       onCountChange(list.length);
     } catch {}
@@ -384,6 +382,7 @@ function ResearchPanel({ token, onCountChange }) {
               </div>
             </div>
             <div className="flex gap-1.5 shrink-0">
+              <a href="https://starlabsresearches.com/research" target="_blank" rel="noreferrer" className="p-2 rounded-xl border border-white/10 hover:border-green-400 text-gray-400 hover:text-green-300 transition-colors"><FiEye size={13}/></a>
               <button onClick={() => setForm(item)} className="p-2 rounded-xl border border-white/10 hover:border-purple-400 text-gray-400 hover:text-purple-300 transition-colors"><FiEdit2 size={13}/></button>
               <button onClick={() => del(item)} disabled={delId === item._id} className="p-2 rounded-xl border border-red-500/20 text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-40"><FiTrash2 size={13}/></button>
             </div>
@@ -472,7 +471,8 @@ export default function AdminPanel() {
           {["blog", "research"].map(t => (
             <button key={t} onClick={() => setTab(t)} className={`text-sm px-4 py-1.5 rounded-full capitalize transition-colors ${tab === t ? "bg-purple-500 text-white" : "border border-white/10 hover:border-purple-400 text-gray-300"}`}>{t}</button>
           ))}
-          <button onClick={clear} className="ml-3 text-gray-400 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm"><FiLogOut size={13}/> Logout</button>
+          <a href="https://starlabsresearches.com" target="_blank" rel="noreferrer" className="ml-3 border border-white/10 hover:border-purple-400 text-gray-300 hover:text-purple-300 transition-colors flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full"><FiEye size={13}/> Go to Home</a>
+          <button onClick={clear} className="ml-1 text-gray-400 hover:text-red-400 transition-colors flex items-center gap-1.5 text-sm"><FiLogOut size={13}/> Logout</button>
         </div>
       </header>
 

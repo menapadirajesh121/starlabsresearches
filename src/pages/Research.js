@@ -49,7 +49,7 @@ function Featured({ item, loading }) {
   const stack  = item?.stack?.length ? item.stack : f.stack;
 
   return (
-    <section ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+    <section ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
       <div className="mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold">{f.heading}</h2>
         <p className="text-gray-400 mt-1 text-sm sm:text-base">{f.subheading}</p>
@@ -138,8 +138,8 @@ function Projects({ projects, topics }) {
   const gridRef = useCardAnimation([filtered]);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24 lg:pb-28">
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
         {/* Sidebar */}
         <div>
           <div className="lg:hidden">
@@ -208,7 +208,7 @@ function Projects({ projects, topics }) {
 function Publications({ pubRef, publications }) {
   const animRef = useCardAnimation([publications]);
   return (
-    <section ref={pubRef} className="border-t border-white/5 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section ref={pubRef} className="border-t border-white/5 py-16 sm:py-20 md:py-24 lg:py-28">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Peer-Reviewed Publications</h2>

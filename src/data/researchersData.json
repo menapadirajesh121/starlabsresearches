@@ -12,7 +12,7 @@
       "Since then, I have been actively involved in research projects spanning exoplanets, stellar variability, machine learning, and Bayesian statistical methods. These experiences have strengthened my passion for astronomy and reinforced my goal of contributing to astrophysical research through observational data analysis and computational techniques.",
       "Today, I continue to explore the universe through research, collaboration, and lifelong learning, with the long-term goal of bringing the world of Astronomy to everyone."
     ],
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
+    "image": "/images/grace_photo.jpg",
     "email": "research@starlabsresearches.com",
     "twitter": "@grace_bhavani",
     "github": "spaceyg-blip",
@@ -97,7 +97,7 @@
       "Through Star Labs Researches, I have had the opportunity to engage with astronomy research, collaborate with fellow researchers, and gain exposure to modern computational approaches used in astrophysics. These experiences continue to strengthen my interest in understanding the cosmos and contributing to future research efforts.",
       "I am particularly interested in learning how observational data can be used to investigate astronomical phenomena and how computational techniques can help uncover patterns hidden within large scientific datasets."
     ],
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
+    "image": "/images/Adiya_premjit_photo.jpg",
     "email": "researches@starlabsresearches.com",
     "twitter": "@adiya_premjit",
     "github": "adiya-premjit",
@@ -128,27 +128,53 @@
   },
   {
     "id": "rajesh",
-    "name": "Rajesh M R",
+    "name": "M R Rajesh Kumar",
     "role": "Digital Media Head",
     "badge": "Digital Media Head",
     "desc": "Building bridges between science and people through digital storytelling.",
-    "title": "Digital Media & Science Communication Lead",
+    "title": "Digital Media & Science Communication Lead • Digital Growth Specialist • AI & Technology Enthusiast • Astrophysics Explorer",
     "bio": [
-      "Rajesh leads the digital media and science communication efforts at Star Labs Researches, ensuring that complex astrophysical research is presented in an engaging and accessible way to the public.",
-      "His work bridges the gap between scientific discovery and public understanding, using storytelling, design, and digital platforms to bring the universe closer to everyone.",
-      "He collaborates closely with the research team to translate cutting-edge findings into compelling content that inspires curiosity and drives engagement across communities."
+      "Rajesh is a Growth and Performance Marketing professional with over 6 years of experience in digital strategy, customer acquisition, and data-driven growth. His career has been shaped by a passion for leveraging technology, analytics, and innovation to create meaningful business impact.",
+      "At StarLabs Researches, Rajesh leads digital strategy, science communication, and public outreach initiatives, ensuring that complex scientific concepts and astrophysical research are presented in an engaging, accessible, and impactful manner. By combining storytelling, design, and digital platforms, he works to bridge the gap between scientific discovery and public understanding.",
+      "His expertise spans Growth Marketing, Performance Marketing, Marketing Analytics, Conversion Rate Optimization (CRO), Meta Ads, Google Ads, LinkedIn Ads, Amazon Advertising, and Marketing Automation. Through data-driven decision-making and continuous experimentation, he has developed a strong foundation in building scalable growth strategies and optimizing digital experiences.",
+      "Beyond marketing, Rajesh is deeply interested in Artificial Intelligence, Full-Stack Development, and Astrophysics. He believes that the future lies at the intersection of science, technology, and innovation, where multidisciplinary thinking can unlock new opportunities for learning, discovery, and progress.",
+      "Driven by curiosity and a commitment to lifelong learning, he continues to explore ways to connect research, technology, and human understanding—making knowledge more accessible while contributing to a future powered by innovation and scientific exploration.",
+      "Core Skills\n\nGrowth Marketing • Performance Marketing • Digital Strategy • Customer Acquisition • Meta Advertising • Google Ads • LinkedIn Advertising • Amazon Advertising • Marketing Analytics • Google Analytics 4 (GA4) • Google Tag Manager (GTM) • Conversion Rate Optimization (CRO) • Marketing Automation • A/B Testing • Data Analysis • Artificial Intelligence • Full-Stack Development • Science Communication • Research & Problem Solving • Strategic Planning"
     ],
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
-    "email": "researches@starlabsresearches.com",
+    "image": "/images/rajesh_kumar_photo.png",
+    "email": "menapadirajesh121@gmail.com",
     "twitter": "@rajesh_mr",
-    "github": "rajesh-mr",
-    "linkedin": "linkedin.com/in/rajesh-mr",
+    "github": "menapadirajesh121",
+    "linkedin": "www.linkedin.com/in/m-r-rajesh-kumar-31378610b",
     "focus": ["Science Communication", "Digital Media", "Content Strategy", "Visual Storytelling", "Social Media", "Science Outreach"],
     "engagements": [
       { "org": "Star Labs Researches", "role": "Digital Media Head" },
       { "org": "Science Communication", "role": "Public Outreach & Digital Storytelling" },
       { "org": "Media & Design", "role": "Visual Content & Strategy" }
     ],
-    "publications": []
+    "publications": [],
+    "projectsIntro": "A showcase of projects that reflect my expertise in digital growth, performance marketing, automation, science communication, and technology-driven innovation.",
+    "projects": [
+      {
+        "emoji": "🚀",
+        "title": "StarLabs Researches",
+        "desc": "Leading digital media and science communication initiatives to make astrophysics and scientific research more accessible to a wider audience. Through content strategy, storytelling, and digital platforms, I help bridge the gap between scientific discovery and public understanding."
+      },
+      {
+        "emoji": "✈️",
+        "title": "Bengaluru Airport App Marketing",
+        "desc": "Executed app-focused digital marketing campaigns aimed at increasing user acquisition, engagement, and retention. Leveraged performance marketing, audience segmentation, and data-driven optimization strategies to enhance app adoption and customer experience."
+      },
+      {
+        "emoji": "🌍",
+        "title": "Building World – Complete Digital Marketing",
+        "desc": "Managed end-to-end digital marketing activities, including campaign planning, performance advertising, audience targeting, analytics, and growth initiatives. Focused on driving brand visibility, lead generation, and measurable business outcomes across digital channels."
+      },
+      {
+        "emoji": "🤖",
+        "title": "Nokego – Marketing Automation",
+        "desc": "Designed and implemented marketing automation workflows to streamline customer communication, improve engagement, and enhance operational efficiency. Utilized automation tools and data-driven strategies to create scalable marketing processes and improve campaign performance."
+      }
+    ]
   }
 ]

@@ -289,11 +289,11 @@ export default function Blog() {
           </p>
         </div>
       )}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-16 lg:py-20">
-        <button onClick={() => setShowSidebar(!showSidebar)} className="lg:hidden flex items-center gap-2 mb-6 border border-white/10 hover:border-white/25 transition-colors px-4 py-2.5 rounded-xl text-sm">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+        <button onClick={() => setShowSidebar(!showSidebar)} className="lg:hidden flex items-center gap-2 mb-8 border border-white/10 hover:border-white/25 transition-colors px-4 py-2.5 rounded-xl text-sm">
           <FiFilter size={14}/> {showSidebar ? "Hide Filters" : "Filters & Search"}
         </button>
-        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 lg:gap-14">
           <div className={`${showSidebar ? "block" : "hidden"} lg:block`}>
             <Sidebar activeCategory={activeCategory} setActiveCategory={v => { setActiveCategory(v); setPage(1); }}
               search={search} setSearch={v => { setSearch(v); setPage(1); }} setPage={setPage} categories={categories}/>

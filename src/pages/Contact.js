@@ -11,7 +11,7 @@ const iconMap = { FiBook, FiAward, FiGithub, FiLinkedin, FiClock, FiMail };
 /* ================= HERO ================= */
 function Hero() {
   return (
-    <section className="relative py-14 sm:py-20 md:py-24 overflow-hidden">
+    <section className="relative py-16 sm:py-20 md:py-28 overflow-hidden">
       <img
         src="https://i.pinimg.com/1200x/c8/3b/99/c83b998ebb38bb33a1d2a634814be171.jpg"
         alt=""
@@ -20,8 +20,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-[#020d18]/82 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* left-aligned */}
-        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-xs sm:text-sm text-blue-200 mb-5">
+        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-xs sm:text-sm text-blue-200 mb-4 sm:mb-5">
           {d.hero.badge}
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-3xl">
@@ -29,7 +28,7 @@ function Hero() {
           <span className="text-blue-300">{d.hero.highlight}</span>
           {" "}{d.hero.suffix}
         </h1>
-        <p className="max-w-xl mt-5 text-sm sm:text-base md:text-lg text-gray-300 leading-7">
+        <p className="max-w-xl mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-gray-300 leading-7">
           {d.hero.paragraph}
         </p>
       </div>
@@ -242,7 +241,7 @@ function ContactSidebar() {
 /* ================= COMMUNITY BANNER ================= */
 function Banner() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 md:pb-16 lg:pb-20">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
       <div className="relative rounded-2xl lg:rounded-[32px] overflow-hidden h-[200px] sm:h-[260px] md:h-[320px]">
         <img src={d.banner.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
@@ -261,15 +260,12 @@ export default function Contact() {
     <div className="bg-[#0f0c16] text-white min-h-screen">
       <Hero />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-16 lg:py-20">
-        {/* section intro — left aligned */}
-        <div className="mb-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+        <div className="mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">{d.form.title}</h2>
           <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-xl leading-7">{d.form.desc}</p>
         </div>
-
-        {/* two-col grid: form left, sidebar right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] gap-10 lg:gap-16 items-start">
           <div>
             <ContactForm />
             <InfoCards />
